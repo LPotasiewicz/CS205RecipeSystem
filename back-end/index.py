@@ -1,4 +1,4 @@
-import flask from Flask
+import flask from Flask, render_template
 import mysql.connector
 
 app = Flask(__name__)
@@ -10,7 +10,7 @@ database = mysql.connector.connect(
 
 @app.route("/")
 def index:
-    return "This is the index (homepage)!"
+    return render_template("../front-end/public/index.html")
 
 if __name__ == "__main__":
     app.run()
