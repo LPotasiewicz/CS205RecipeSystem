@@ -10,4 +10,7 @@ database = mysql.connector.connect(
 
 @app.route("/")
 def index:
-    return "Hello World!"
+    return "This is the index (homepage)!"
+
+if __name__ == "__main__":
+    app.run()
