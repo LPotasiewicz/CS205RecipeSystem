@@ -13,7 +13,7 @@ class Recipe extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="recipe">
                 <h2>{"I suppose this is a recipe."}</h2>
                 <button onClick={this._getMeData}>{this.props.text}</button>
             </div>
