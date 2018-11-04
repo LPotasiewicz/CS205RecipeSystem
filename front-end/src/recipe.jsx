@@ -7,11 +7,15 @@ class Recipe extends Component {
         text: PropTypes.string
     };
 
+    _getMeData() {
+        console.log("data got");
+    }
+
     render() {
         return (
             <div className="App">
                 <h2>{"I suppose this is a recipe."}</h2>
-                <p>{this.props.text}</p>
+                <button onClick={this._getMeData}>{this.props.text}</button>
             </div>
         );
     }
