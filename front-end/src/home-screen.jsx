@@ -4,7 +4,7 @@ import './App.css';
 import {RecipeList} from "./recipe-list";
 
 class HomeScreen extends Component {
-    propTypes = {
+    static propTypes = {
         text: PropTypes.string
     };
 

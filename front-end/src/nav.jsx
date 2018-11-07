@@ -4,7 +4,7 @@ import './App.css';
 import {partial} from "./App";
 
 class Nav extends Component {
-    propTypes = {
+    static propTypes = {
         navOptions: PropTypes.array,
         changePage: PropTypes.func
     };
