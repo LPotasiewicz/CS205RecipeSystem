@@ -3,15 +3,19 @@ import PropTypes from 'prop-types';
 import './App.css';
 
 class Recipe extends Component {
-    propTypes = {
+    static propTypes = {
         text: PropTypes.string
     };
 
+    _getMeData() {
+        console.log("data got");
+    }
+
     render() {
         return (
-            <div className="App">
+            <div className="recipe">
                 <h2>{"I suppose this is a recipe."}</h2>
-                <p>{this.props.text}</p>
+                <button onClick={this._getMeData}>{this.props.text}</button>
             </div>
         );
     }
