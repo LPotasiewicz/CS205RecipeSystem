@@ -50,7 +50,6 @@ class App extends Component {
         return (
             <div className="App">
                 <TopBar/>
-                <h1>{"App"}</h1>
                 <Nav navOptions={[pages.home, pages.recipe]} changePage={this.changePage}/>
                 {this._getPage()}
             </div>

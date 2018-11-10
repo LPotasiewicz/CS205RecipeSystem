@@ -11,7 +11,6 @@ class HomeScreen extends Component {
     render() {
         return (
             <div className="home-screen">
-                <h2>{"Home Screen"}</h2>
                 <RecipeList/>
             </div>
         );
