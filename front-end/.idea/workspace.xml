@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0795d79-82fa-484b-b4df-111988f23092" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/top-bar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/nav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recipe-header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipe-header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recipe-list.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/recipe-list.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="a0795d79-82fa-484b-b4df-111988f23092" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -144,8 +137,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/recipe-header.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+            <state relative-caret-position="308">
+              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -263,12 +256,12 @@
       <workItem from="1541003702037" duration="3629000" />
       <workItem from="1541185350062" duration="7971000" />
       <workItem from="1541792438265" duration="615000" />
-      <workItem from="1541874892952" duration="3625000" />
+      <workItem from="1541874892952" duration="3660000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15840000" />
+    <option name="totallyTimeSpent" value="15875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
@@ -422,8 +415,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/recipe-header.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        <state relative-caret-position="308">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
