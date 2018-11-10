@@ -13,8 +13,8 @@ class RecipeList extends Component {
         return (
             <div className="recipe-list">
                 <h2>{"Recipe List"}</h2>
-                {recipes.map((r)=>
-                    <RecipeHeader title={r}/>
+                {recipes.map((r, i)=>
+                    <RecipeHeader title={r} key={r + i}/>
                 )}
             </div>
         );

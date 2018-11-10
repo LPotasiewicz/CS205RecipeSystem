@@ -13,7 +13,7 @@ class Nav extends Component {
         return (
             <div className="nav">
                 {this.props.navOptions.map((option)=>(
-                    <button onClick={partial(this.props.changePage, option)}>{option}</button>
+                    <button key={option} onClick={partial(this.props.changePage, option)}>{option}</button>
                 ))}
             </div>
         );

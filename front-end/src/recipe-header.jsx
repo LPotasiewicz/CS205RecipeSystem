@@ -13,7 +13,10 @@ class RecipeHeader extends Component {
                 <h3>{this.props.title}</h3>
                 <h4>{"Author"}</h4>
                 <p>{"Description of recipe 2018 (not clickbait) (cops called)"}</p>
-                <img src={"//lh4.googleusercontent.com/-ca8EQoEIcBo/AAAAAAAAAAI/AAAAAAAAECw/VugnJIvzv6U/s50-c-k-no/photo.jpg"}/>
+                <img
+                    src={"//lh4.googleusercontent.com/-ca8EQoEIcBo/AAAAAAAAAAI/AAAAAAAAECw/VugnJIvzv6U/s50-c-k-no/photo.jpg"}
+                    alt={"recipe"}
+                />
             </div>
         );
     }

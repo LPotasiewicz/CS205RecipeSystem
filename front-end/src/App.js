@@ -3,6 +3,7 @@ import './App.css';
 import {Recipe} from "./recipe";
 import {HomeScreen} from "./home-screen";
 import {Nav} from "./nav";
+import {TopBar} from "./top-bar";
 
 export const pages = {
     home: "Home",
@@ -27,7 +28,6 @@ class App extends Component {
     constructor(props){
         super(props);
         this.state = {page: pages.home};
-        console.log("constructed lol");
         this.changePage = this.changePage.bind(this);
     }
 
@@ -49,6 +49,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <TopBar/>
                 <h1>{"App"}</h1>
                 <Nav navOptions={[pages.home, pages.recipe]} changePage={this.changePage}/>
                 {this._getPage()}
