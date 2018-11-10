@@ -12,6 +12,7 @@ class HomeScreen extends Component {
         return (
             <div className="home-screen">
                 <RecipeList/>
+
             </div>
         );
     }
