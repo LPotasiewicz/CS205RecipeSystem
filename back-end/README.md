@@ -1,8 +1,8 @@
 ## GET Requests
 To view users and recipes collections go to:
 
-- <url>/api/users 
-- <url>/api/recipes
+- /api/users 
+- /api/recipes
 
 ## POST Requests
 To add to the users or recipes collections follow the JSON guideline
