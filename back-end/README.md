@@ -1,18 +1,13 @@
 Recipe System API
------------------
 
-=============
 GET Requests:
-=============
 To view users and recipes collections go to:
 
 - <url>/api/users
 	or 
 - <url>/api/recipes
 
-==============
 POST Requests:
-==============
 To add to the users or recipes collections follow the JSON guideline
 below to keep everything the same
 
