@@ -30,7 +30,8 @@ def get_recipes():
                        "prep_time" : recipe["prep_time"],
                        "cook_time" : recipe["cook_time"],
                        "img_url" : recipe["img_url"],
-                       "ingredients" : recipe["ingredients"]})
+                       "ingredients" : recipe["ingredients"],
+                       "steps" : recipe["steps"]})
     return jsonify({output})
 
 #POST
@@ -55,9 +56,11 @@ def create_recipe():
     cook_time = request.json["cook_time"]
     img_url = request.json["img_url"]
     ingredients = request.json["ingredients"]
+    steps = request.json["steps"]
     new_user = user.insert({"title" : title, "author" : author,
                             "prep_time" : prep_time, "cook_time" : cook_time,
-                            "img_url", img_url, "ingredients" : ingredients})
+                            "img_url", img_url, "ingredients" : ingredients,
+                            "steps", steps})
 
 if __name__ == '__main__':
     app.run(debug=True)
