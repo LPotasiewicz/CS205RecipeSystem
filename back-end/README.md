@@ -1,22 +1,22 @@
 Recipe System API
 
-GET Requests:
+## 'GET Requests'
 To view users and recipes collections go to:
 
 - <url>/api/users
 	or 
 - <url>/api/recipes
 
-POST Requests:
+## 'POST Requests'
 To add to the users or recipes collections follow the JSON guideline
 below to keep everything the same
 
 Users:
 [
-   {
-     "name" : "user's first and last name"
-     "email" : "user's email address"
-     "password" : "user's password"
+&nbsp&nbsp&nbsp{
+&nbsp&nbsp&nbsp&nbsp&nbsp"name" : "user's first and last name"
+&nbsp&nbsp&nbsp&nbsp&nbsp"email" : "user's email address"
+&nbsp&nbsp&nbsp&nbsp&nbsp"password" : "user's password"
    } 
 ]
 
