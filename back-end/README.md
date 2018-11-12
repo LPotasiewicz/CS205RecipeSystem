@@ -9,13 +9,13 @@ To add to the users or recipes collections follow the JSON guideline
 below to keep everything the same
 
 Users:
--[
--&nbsp;&nbsp;&nbsp;{
--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name" : "user's first and last name"
--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email" : "user's email address"
--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"password" : "user's password"
--&nbsp;&nbsp;&nbsp;} 
--]
+- [
+- &nbsp;&nbsp;&nbsp;{
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name" : "user's first and last name"
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email" : "user's email address"
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"password" : "user's password"
+- &nbsp;&nbsp;&nbsp;} 
+- ]
 
 Recipes:
 [
