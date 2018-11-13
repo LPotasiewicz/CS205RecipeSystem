@@ -1,6 +1,6 @@
-============
-GET Request:
-============
+===========
+GET Request
+===========
 Go to the links below 
 and use a GET request to access 
 users and recipes collections in JSON format
