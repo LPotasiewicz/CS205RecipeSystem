@@ -29,16 +29,16 @@ Recipes:
   "author": "recipe's author (full name from user's collection)"
   "cook_time": "time it takes to cook"
   "img_url": "url path to image of recipe"
-  "ingredients": {
-                   "ingredient1" :"enter ingredient 1 here"
-		   "ingredient2" :"enter ingredient 2 here"
+  "ingredients": [
+                   "enter ingredient 1 here",
+		   "enter ingredient 2 here",
 		   *enter as many ingredients neccessary
 	           *just remember to follow proper name assignment
-                 }
-  "steps": {
-                   "step1" :"enter ingredient 1 here"
-		   "step2" :"enter ingredient 2 here"
+                 ]
+  "steps": [
+                   "enter ingredient 1 here",
+		   "enter ingredient 2 here",
 		   *enter as many steps neccessary
 	           *just remember to follow proper name assignment
-                 }
+           ]
 }
