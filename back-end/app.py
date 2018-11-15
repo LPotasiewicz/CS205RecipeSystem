@@ -1,11 +1,13 @@
 from flask import Flask, jsonify, request
 from flask_pymongo import PyMongo
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # MongoDB connection
-#app.config["MONGO_URI"] = "mongodb://devon:1234@test-shard-00-00-i0x5r.mongodb.net:27017,test-shard-00-01-i0x5r.mongodb.net:27017,test-shard-00-02-i0x5r.mongodb.net:27017/test?ssl=true&replicaSet=Test-shard-0&authSource=admin&retryWrites=true"
-app.config["MONGO_URI"] = "mongodb://localhost:27017/mydb"
+app.config['MONGO_URI'] = 'mongodb://devon:1234@test-shard-00-00-i0x5r.mongodb.net:27017,test-shard-00-01-i0x5r.mongodb.net:27017,test-shard-00-02-i0x5r.mongodb.net:27017/test?ssl=true&replicaSet=Test-shard-0&authSource=admin&retryWrites=true'
+#app.config["MONGO_URI"] = "mongodb://localhost:27017/mydb"
 mongo = PyMongo(app)
 
 @app.route("/")
@@ -13,7 +15,7 @@ def index():
     return "Hello World!"
 
 #GET
-@app.route("/api/users", methods=["GET"])
+@app.route("/users", methods=["GET"])
 def get_users():
     users = mongo.db.users
     output = []
@@ -22,7 +24,7 @@ def get_users():
                        "email" : user["email"], "password" : user["password"]})
     return jsonify(output)
 
-@app.route("/api/recipes", methods=["GET"])
+@app.route("/recipes", methods=["GET"])
 def get_recipes():
     recipes = mongo.db.recipes
     output = []
@@ -36,7 +38,7 @@ def get_recipes():
     return jsonify(output)
 
 #POST
-@app.route("/api/users", methods=["POST"])
+@app.route("/users", methods=["POST"])
 def create_user():
     user = mongo.db.users
     name = request.json["name"]
@@ -46,7 +48,7 @@ def create_user():
                             "password" : password})
     return "Success"
 
-@app.route("/api/recipes", methods=["POST"])
+@app.route("/recipes", methods=["POST"])
 def create_recipe():
     recipe = mongo.db.recipes
     title = request.json["title"]

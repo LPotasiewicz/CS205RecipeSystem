@@ -9,8 +9,16 @@ class Recipe extends Component {
     };
 
     _getMeData() {
-        console.log("data got");
+        const Http = new XMLHttpRequest();
+        const url='https://perfect-seahorse-89.localtunnel.me/users';
+        Http.open("GET", url);
+        Http.send();
+        Http.onreadystatechange = (e) => {
+            console.log(Http.responseText);
+        }
     }
+
+
 
     render() {
         const recipes = ["recipe 1", "recipe 2", "recipe 3", "recipe 4", "recipe 5"];
@@ -33,6 +41,7 @@ class Recipe extends Component {
                         <RecipeHeader title={r} key={r + i}/>
                     )}
                 </section>
+                <button onClick={this._getMeData}>click me for data</button>
             </div>
         );
     }
