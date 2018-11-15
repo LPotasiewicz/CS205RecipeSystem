@@ -12,9 +12,9 @@ class RecipeHeader extends Component {
             <div className="recipe-header">
                 <h3>{this.props.title}</h3>
                 <h4>{"Author"}</h4>
-                <p>{"Description of recipe 2018 (not clickbait) (cops called)"}</p>
+                <p>{"Description of recipe"}</p>
                 <img
-                    src={"//lh4.googleusercontent.com/-ca8EQoEIcBo/AAAAAAAAAAI/AAAAAAAAECw/VugnJIvzv6U/s50-c-k-no/photo.jpg"}
+                    src={"https://1.bp.blogspot.com/-O0cI_U3LsOw/Wrr0f6muv9I/AAAAAAABZ1w/-G6OaCph4DYaVwdDzNljQ_C2v7criod5ACLcBGAs/s1600/IMG_1205-avocado-toast-cumin-citrus-salt-recipe--best-.png"}
                     alt={"recipe"}
                 />
             </div>

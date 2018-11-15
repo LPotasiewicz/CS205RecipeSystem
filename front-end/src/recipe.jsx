@@ -20,14 +20,14 @@ class Recipe extends Component {
                     <h2>{"Recipe Title"}</h2>
                     <p className={"author"}>{"Author"}</p>
                     <img
-                        src={"//lh4.googleusercontent.com/-ca8EQoEIcBo/AAAAAAAAAAI/AAAAAAAAECw/VugnJIvzv6U/s50-c-k-no/photo.jpg"}
-                        alt={"recipe"}
+                        src={"https://i.imgflip.com/1ujwer.jpg"}
+                        alt={"Recipe"}
                     />
                     <p className={"description"}>{"Description"}</p>
                     <p className={"ingredients"}>{"Recipe Ingredients"}</p>
                     <p className={"instructions"}>{"Recipe Instructions"}</p>
                 </section>
-                <section className={"related-recipes"}>
+                <section className={"Related-recipes"}>
                     <h4>{"Other recipes by this user:"}</h4>
                     {recipes.map((r, i)=>
                         <RecipeHeader title={r} key={r + i}/>

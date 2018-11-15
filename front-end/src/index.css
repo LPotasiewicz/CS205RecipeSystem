@@ -27,6 +27,8 @@ body {
 /* RECIPE LIST */
 .recipe-list{
     padding: 1em;
+    text-align: center;
+
 }
 .recipe-list h2 {
     font-size: 20pt;
@@ -35,11 +37,12 @@ body {
 
 /* RECIPE BLOCK */
 .recipe-header {
+    max-width: 30%;
     background-color: antiquewhite;
-    margin: 10px;
+    margin: 5px;
     padding: 1em;
-    float: left;
     border: thin dotted;
+    display: inline-block;
 }
 .recipe-header h2 {
     color: darkcyan;
@@ -54,6 +57,7 @@ body {
     font-style: italic;
 }
 .recipe-header img {
+    max-width: 20%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -68,6 +72,7 @@ body {
 }
 
 .recipe-info img {
+    max-width: 15%;
     margin-left: 2em;
     border-style: double;
 }
