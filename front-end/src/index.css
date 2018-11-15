@@ -1,32 +1,39 @@
-/* home-screen */
 body {
     background-color: floralwhite;
     margin: 0;
     padding: 0;
-    font-family: "Bradley Hand ITC";
+    font-family: "Helvetica Neue";
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-    font-family: "Bradley Hand ITC";
-}
 .top-bar {
     width: 100%;
     text-align: center;
 }
+
+/* NAVIGATION */
 .nav {
     width: 100%;
     text-align: center;
 }
+  /* TOP BAR */
 .nav .top-bar button{
     font-size: 14pt;
     color: darkcyan;
 }
+
+/* RECIPE LIST */
 .recipe-list{
     padding: 1em;
 }
+.recipe-list h2 {
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+/* RECIPE BLOCK */
 .recipe-header {
     background-color: antiquewhite;
     margin: 10px;
@@ -34,9 +41,9 @@ code {
     float: left;
     border: thin dotted;
 }
-.recipe-header h3 {
+.recipe-header h2 {
     color: darkcyan;
-    font-size: 16pt;
+    font-size: 20pt;
 }
 .recipe-header h4 {
     color: lightseagreen;
@@ -52,6 +59,37 @@ code {
     margin-right: auto;
     border-radius: 25px;
     padding: 1em;
+}
 
+/* RECIPE-INFO */
 
+.recipe-info h2 {
+    margin-left: 2em;
+}
+
+.recipe-info img {
+    margin-left: 2em;
+    border-style: double;
+}
+
+.author {
+    margin-left: 2em;
+}
+
+.description {
+    margin-left: 2em;
+}
+
+.ingredients {
+    margin-left: 2em;
+}
+
+.instructions {
+    margin-left: 2em;
+}
+
+/* RELATED-RECIPES */
+
+.related-recipes h4{
+    margin-left: 1em;
 }
