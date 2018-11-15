@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, request
 from flask_pymongo import PyMongo
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # MongoDB connection
 app.config['MONGO_URI'] = 'mongodb://devon:1234@test-shard-00-00-i0x5r.mongodb.net:27017,test-shard-00-01-i0x5r.mongodb.net:27017,test-shard-00-02-i0x5r.mongodb.net:27017/test?ssl=true&replicaSet=Test-shard-0&authSource=admin&retryWrites=true'
