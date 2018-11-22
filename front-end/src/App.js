@@ -4,10 +4,12 @@ import {Recipe} from "./recipe";
 import {HomeScreen} from "./home-screen";
 import {Nav} from "./nav";
 import {TopBar} from "./top-bar";
+import {AddARecipe} from "./add-a-recipe";
 
 export const pages = {
     home: "Home",
-    recipe: "Recipe"
+    recipe: "Recipe",
+    addARecipe: "Add A Recipe"
 };
 
 export function partial(fn /*, args...*/) {
@@ -37,6 +39,8 @@ class App extends Component {
                 return(<HomeScreen/>);
             case(pages.recipe):
                 return(<Recipe/>);
+            case(pages.addARecipe):
+                return(<AddARecipe/>);
             default:
                 return (<h1>{"How did you get here"}</h1>)
         }
@@ -50,7 +54,7 @@ class App extends Component {
         return (
             <div className="App">
                 <TopBar/>
-                <Nav navOptions={[pages.home, pages.recipe]} changePage={this.changePage}/>
+                <Nav navOptions={Object.values(pages)} changePage={this.changePage}/>
                 {this._getPage()}
             </div>
         );

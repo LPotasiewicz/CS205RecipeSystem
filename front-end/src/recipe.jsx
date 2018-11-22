@@ -10,15 +10,13 @@ class Recipe extends Component {
 
     _getMeData() {
         const Http = new XMLHttpRequest();
-        const url='https://perfect-seahorse-89.localtunnel.me/users';
+        const url = 'https://perfect-seahorse-89.localtunnel.me/users';
         Http.open("GET", url);
         Http.send();
         Http.onreadystatechange = (e) => {
             console.log(Http.responseText);
         }
     }
-
-
 
     render() {
         const recipes = ["recipe 1", "recipe 2", "recipe 3", "recipe 4", "recipe 5"];
