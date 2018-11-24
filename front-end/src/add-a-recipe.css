@@ -1,0 +1,16 @@
+section input {
+    display: block;
+}
+
+.add-a-recipe {
+    display: inline-block;
+    text-align: left;
+    width: 54rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 0 1rem;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.app {
+    text-align: center;
+}

@@ -52,7 +52,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="app">
                 <TopBar/>
                 <Nav navOptions={Object.values(pages)} changePage={this.changePage}/>
                 {this._getPage()}
