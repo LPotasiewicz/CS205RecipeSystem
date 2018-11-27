@@ -38,7 +38,7 @@ class App extends Component {
             case(pages.home):
                 return(<HomeScreen/>);
             case(pages.recipe):
-                return(<Recipe/>);
+                return(<Recipe />);
             case(pages.addARecipe):
                 return(<AddARecipe/>);
             default:

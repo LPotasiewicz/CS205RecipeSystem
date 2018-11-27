@@ -2,24 +2,35 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
 import {RecipeHeader} from "./recipe-header";
+import {getRecipes} from "./actions";
+import {store} from "./store";
 
 class Recipe extends Component {
     static propTypes = {
-        text: PropTypes.string
+        recipeId: PropTypes.string
     };
 
-    _getMeData() {
-        const Http = new XMLHttpRequest();
-        const url = 'https://perfect-seahorse-89.localtunnel.me/users';
-        Http.open("GET", url);
-        Http.send();
-        Http.onreadystatechange = (e) => {
-            console.log(Http.responseText);
-        }
+    constructor(props) {
+        super(props);
+        this.state = {};
+        this.dataListener = this.dataListener.bind(this);
+        store.listen("recipes", this.dataListenerRecipe);
+        store.listen("recipe" + props.recipeId, this.dataListenerRecipes);
+    }
+
+    dataListenerRecipe(data) {
+        this.setState({recipes: data})
+    }
+    dataListenerRecipes(data) {
+        this.setState({recipes: data})
+    }
+
+    componentDidMount(){
+        getRecipes();
     }
 
     render() {
-        const recipes = ["recipe 1", "recipe 2", "recipe 3", "recipe 4", "recipe 5"];
+        const recipes = this.state.recipes;
         return (
             <div className="recipe">
                 <section className={"recipe-info"}>
