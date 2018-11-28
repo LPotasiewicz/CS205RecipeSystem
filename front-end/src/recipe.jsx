@@ -22,28 +22,39 @@ class Recipe extends Component {
     dataListenerRecipe(data) {
         this.setState({recipe: data})
     }
+
     dataListenerRecipes(data) {
         this.setState({recipes: data})
     }
 
-    componentDidMount(){
+    componentDidMount() {
         getRecipes();
     }
 
     render() {
         const recipes = this.state.recipes || [];
+        const recipe = this.state.recipe || {};
         return (
             <div className="recipe">
                 <section className={"recipe-info"}>
-                    <h2>{recipes.title}</h2>
-                    <p className={"author"}>{recipes.author}</p>
-                    <img
-                        src={"https://i.imgflip.com/1ujwer.jpg"}
-                        alt={"Recipe"}
-                    />
-                    <p className={"description"}>{"Description"}</p>
-                    <p className={"ingredients"}>{"Recipe Ingredients"}</p>
-                    <p className={"instructions"}>{"Recipe Instructions"}</p>
+                    <h2>{recipe.title || "--"}</h2>
+                    <p className={"author"}>{recipe.author || "--"}</p>
+                    <div className={"img-container"}>
+                        <img
+                            src={"https://i.imgflip.com/1ujwer.jpg"}
+                            alt={"Recipe"}
+                        />
+                    </div>
+                    <h4>{"Cook Time:"}</h4>
+                    <p className={"cook-time"}>{recipe.cook_time || "--"}</p>
+                    <h4 className={"ingredients"}>{"Ingredients:"}</h4>
+                    {(recipe.ingredients || []).map((ing) =>
+                        <p className={"ingredient"}>{ing}</p>
+                    )}
+                    <h4 className={"instructions"}>{"Instructions:"}</h4>
+                    {(recipe.ingredients || []).map((ing) =>
+                        <p className={"ingredient"}>{ing}</p>
+                    )}
                 </section>
                 <section className={"Related-recipes"}>
                     <h4>{"Other recipes by this user:"}</h4>
@@ -53,4 +64,5 @@ class Recipe extends Component {
         );
     }
 }
+
 export {Recipe};

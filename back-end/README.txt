@@ -28,7 +28,7 @@ Recipes:
 {
   "recipe_id": "recipe's id"
   "title": "recipe's title"
-  "author": "recipe's author (full name from user's collection)"
+  "userId": "author of recipe (userId)"
   "cook_time": "time it takes to cook"
   "img_url": "url path to image of recipe"
   "ingredients": [
