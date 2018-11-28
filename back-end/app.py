@@ -45,7 +45,7 @@ def get_recipes():
     output = []
     for recipe in recipes.find():
         output.append({"id" : recipe["id"], "title" : recipe["title"],
-                       "author" : recipe["author"],
+                       "userId" : recipe["userId"],
                        "cook_time" : recipe["cook_time"],
                        "img_url" : recipe["img_url"],
                        "ingredients" : recipe["ingredients"],
@@ -59,7 +59,7 @@ def get_recipe(title):
     recipe = recipes.find_one({"title" : title})
     if recipe:
         output = {"id" : recipe["id"], "title" : recipe["title"],
-                  "author" : recipe["author"],
+                  "userId" : recipe["userId"],
                   "cook_time" : recipe["cook_time"],
                   "img_url" : recipe["img_url"],
                   "ingredients" : recipe["ingredients"],
@@ -87,7 +87,7 @@ def create_recipe():
     global recipeId
     recipe = mongo.db.recipes
     title = request.json["title"]
-    author = request.json["userId"]
+    userId = request.json["userId"]
     cook_time = request.json["cook_time"]
     img_url = request.json["img_url"]
     ingredients = request.json["ingredients"]
