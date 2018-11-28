@@ -92,7 +92,7 @@ def create_recipe():
     img_url = request.json["img_url"]
     ingredients = request.json["ingredients"]
     steps = request.json["steps"]
-    new_user = recipe.insert({"id" : str(recipeId), "title" : title, "userId" : author, "cook_time" : cook_time,
+    new_user = recipe.insert({"id" : str(recipeId), "title" : title, "userId" : userId, "cook_time" : cook_time,
                             "img_url": img_url, "ingredients" : ingredients,
                             "steps": steps})
     return "Success"
