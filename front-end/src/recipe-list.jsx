@@ -5,17 +5,17 @@ import {RecipeHeader} from "./recipe-header";
 
 class RecipeList extends Component {
     static propTypes = {
-        recipes: PropTypes.string
+        recipes: PropTypes.array
     };
 
     render() {
-        const recipes = ["recipe 1", "recipe 2", "recipe 3", "recipe 4", "recipe 5"];
+        const recipes = this.props.recipes || [] ;
         return (
             <div className="recipe-list">
                 <h2>{"Recipe List"}</h2>
-                {recipes.map((r, i)=>
-                    <RecipeHeader title={r} key={r + i}/>
-                )}
+                {recipes ? recipes.map((r, i)=>
+                    <RecipeHeader recipeHeader={r} key={r.title + i}/>
+                ) : null}
             </div>
         );
     }

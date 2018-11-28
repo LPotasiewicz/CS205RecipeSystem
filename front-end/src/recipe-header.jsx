@@ -4,17 +4,18 @@ import './App.css';
 
 class RecipeHeader extends Component {
     static propTypes = {
-        title: PropTypes.string
+        recipeHeader: PropTypes.object
     };
 
     render() {
+        const recipeHeader = this.props.recipeHeader || {};
         return (
             <div className="recipe-header">
-                <h3>{this.props.title}</h3>
-                <h4>{"Author"}</h4>
-                <p>{"Description of recipe"}</p>
+                <h3>{recipeHeader.title}</h3>
+                <h4>{recipeHeader.author}</h4>
+                <p>{recipeHeader.cook_time}</p>
                 <img
-                    src={"https://1.bp.blogspot.com/-O0cI_U3LsOw/Wrr0f6muv9I/AAAAAAABZ1w/-G6OaCph4DYaVwdDzNljQ_C2v7criod5ACLcBGAs/s1600/IMG_1205-avocado-toast-cumin-citrus-salt-recipe--best-.png"}
+                    src={recipeHeader.img_url}
                     alt={"recipe"}
                 />
             </div>
