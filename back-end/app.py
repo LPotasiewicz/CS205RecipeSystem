@@ -27,10 +27,10 @@ def get_users():
     return jsonify(output)
 
 #GET one user by their name
-@app.route("/users/", methods=["GET"])
-def get_user(name):
+@app.route("/users/<userid>", methods=["GET"])
+def get_user(userid):
     users = mongo.db.users
-    user = users.find_one({"name" : name})
+    user = users.find_one({"id" : userid})
     if user:
         output = {"id" : user["id"], "name" : user["name"], "email" : user["email"],
                   "password" : user["password"]}
@@ -92,10 +92,11 @@ def create_recipe():
     img_url = request.json["img_url"]
     ingredients = request.json["ingredients"]
     steps = request.json["steps"]
-    new_user = recipe.insert({"id" : str(recipeId), "title" : title, "userId" : userId, "cook_time" : cook_time,
+    new_recipe = recipe.insert({"id" : str(recipeId), "title" : title, "userId" : userId, "cook_time" : cook_time,
                             "img_url": img_url, "ingredients" : ingredients,
                             "steps": steps})
     return "Success"
 
 if __name__ == '__main__':
+    #app.run()
     app.run(host="0.0.0.0", port=80)
