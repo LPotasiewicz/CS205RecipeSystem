@@ -18,6 +18,7 @@ Users:
 -----
 {
   "name": "user's name"
+  "user_id": "user's id"
   "email": "user's email address"
   "password" : "user's password"
 }
@@ -25,6 +26,7 @@ Users:
 Recipes:
 --------
 {
+  "recipe_id": "recipe's id"
   "title": "recipe's title"
   "userId": "author of recipe (userId)"
   "cook_time": "time it takes to cook"
@@ -42,3 +44,51 @@ Recipes:
 	           *just remember to follow proper name assignment
            ]
 }
+
+Below are all api endpoints required 
+
+/users/<username>
+{
+  "name": "user's name"
+  "user_id": "user's id"
+  "email": "user's email address"
+  "password" : "user's password"
+}
+
+/recipes
+[
+Recipe…,
+Recipe…,
+Recipe…,
+]
+
+/recipes/<recipe_id>
+{
+  "recipe_id": "recipe's id"
+  "title": "recipe's title"
+  "author": "recipe's author (full name from user's collection)"
+  "cook_time": "time it takes to cook"
+  "img_url": "url path to image of recipe"
+  "ingredients": [
+    "enter ingredient 1 here",
+    "enter ingredient 2 here"
+  ]
+  "steps": [
+    "enter ingredient 1 here",
+    "enter ingredient 2 here",
+  ]
+}
+
+/recipes/<search_terms>
+[
+Recipe…,
+Recipe…,
+Recipe…,
+]
+
+/recipes/<user_id>
+[
+Recipe…,
+Recipe…,
+Recipe…,
+]
