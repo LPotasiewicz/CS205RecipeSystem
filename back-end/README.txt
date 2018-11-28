@@ -26,7 +26,7 @@ Recipes:
 --------
 {
   "title": "recipe's title"
-  "author": "recipe's author (full name from user's collection)"
+  "author": "recipe's author (userId)"
   "cook_time": "time it takes to cook"
   "img_url": "url path to image of recipe"
   "ingredients": [
