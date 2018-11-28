@@ -95,6 +95,7 @@ def create_recipe():
     new_recipe = recipe.insert({"id" : str(recipeId), "title" : title, "userId" : userId, "cook_time" : cook_time,
                             "img_url": img_url, "ingredients" : ingredients,
                             "steps": steps})
+    recipeId += 1
     return "Success"
 
 if __name__ == '__main__':
