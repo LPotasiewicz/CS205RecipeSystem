@@ -26,11 +26,11 @@ def get_users():
                        "email" : user["email"], "password" : user["password"]})
     return jsonify(output)
 
-#GET one user by their name
-@app.route("/users/<userid>", methods=["GET"])
-def get_user(userid):
+#GET one user by their email
+@app.route("/users/<email>", methods=["GET"])
+def get_user(email):
     users = mongo.db.users
-    user = users.find_one({"id" : userid})
+    user = users.find_one({"email" : email})
     if user:
         output = {"id" : user["id"], "name" : user["name"], "email" : user["email"],
                   "password" : user["password"]}
@@ -52,11 +52,11 @@ def get_recipes():
                        "steps" : recipe["steps"]})
     return jsonify(output)
 
-#GET one recipe by its title
-@app.route("/recipes/", methods=["GET"])
-def get_recipe(title):
+#GET one recipe by its id
+@app.route("/recipes/<recipeid>", methods=["GET"])
+def get_recipe(recipeid):
     recipes = mongo.db.recipes
-    recipe = recipes.find_one({"title" : title})
+    recipe = recipes.find_one({"id" : recipeid})
     if recipe:
         output = {"id" : recipe["id"], "title" : recipe["title"],
                   "userId" : recipe["userId"],
@@ -99,5 +99,5 @@ def create_recipe():
     return "Success"
 
 if __name__ == '__main__':
-    #app.run()
-    app.run(host="0.0.0.0", port=80)
+    app.run()
+    #app.run(host="0.0.0.0", port=80)
