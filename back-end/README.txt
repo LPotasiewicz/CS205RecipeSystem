@@ -5,8 +5,16 @@ Go to the links below
 and use a GET request to access 
 users and recipes collections in JSON format
 
-Users: /api/users
-Recipes: /api/recipes
+Users: 
+-----
+/users (all users)
+/users/<email> (user by email)
+
+Recipes: 
+/recipes (all recipes)
+/recipes/<recipeId> (recipe by id)
+/recipes/users/<userId> (recipes by specific userId)
+/recipes/<searchTerm> (search recipes by a term)
 
 ============
 POST Request
@@ -44,51 +52,3 @@ Recipes:
 	           *just remember to follow proper name assignment
            ]
 }
-
-Below are all api endpoints required 
-
-/users/<username>
-{
-  "name": "user's name"
-  "user_id": "user's id"
-  "email": "user's email address"
-  "password" : "user's password"
-}
-
-/recipes
-[
-Recipe…,
-Recipe…,
-Recipe…,
-]
-
-/recipes/<recipe_id>
-{
-  "recipe_id": "recipe's id"
-  "title": "recipe's title"
-  "author": "recipe's author (full name from user's collection)"
-  "cook_time": "time it takes to cook"
-  "img_url": "url path to image of recipe"
-  "ingredients": [
-    "enter ingredient 1 here",
-    "enter ingredient 2 here"
-  ]
-  "steps": [
-    "enter ingredient 1 here",
-    "enter ingredient 2 here",
-  ]
-}
-
-/recipes/<search_terms>
-[
-Recipe…,
-Recipe…,
-Recipe…,
-]
-
-/recipes/<user_id>
-[
-Recipe…,
-Recipe…,
-Recipe…,
-]
