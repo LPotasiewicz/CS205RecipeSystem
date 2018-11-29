@@ -6,6 +6,6 @@ export function getRecipes() {
     Http.open("GET", url);
     Http.send();
     Http.onreadystatechange = (e) => {
-        store.add("recipes", Http.responseText ? JSON.parse(Http.responseText) : Http.responseText);
+        store.add("recipes", Http.responseText ? JSON.parse(Http.responseText) : []);
     };
 }

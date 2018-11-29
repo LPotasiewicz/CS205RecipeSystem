@@ -11,7 +11,14 @@
 }
 
 .recipe .img-container {
-    width: 100%;
+    display: inline-block;
+    width: 50%;
     height: 30rem;
     overflow: hidden;
+}
+
+.recipe-title-area {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
 }

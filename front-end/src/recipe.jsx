@@ -37,8 +37,10 @@ class Recipe extends Component {
         return (
             <div className="recipe">
                 <section className={"recipe-info"}>
-                    <h2>{recipe.title || "--"}</h2>
-                    <p className={"author"}>{recipe.author || "--"}</p>
+                    <div className={"recipe-title-area"}>
+                        <h2>{recipe.title || "--"}</h2>
+                        <p className={"author"}>{recipe.author || "--"}</p>
+                    </div>
                     <div className={"img-container"}>
                         <img
                             src={"https://i.imgflip.com/1ujwer.jpg"}

@@ -7,7 +7,8 @@ import {getRecipes} from "./actions";
 
 class HomeScreen extends Component {
     static propTypes = {
-        text: PropTypes.string
+        text: PropTypes.string,
+        changePage: PropTypes.func
     };
 
     constructor(props) {

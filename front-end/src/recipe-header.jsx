@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import './App.css';
+import {pages, partial} from "./App";
 
 class RecipeHeader extends Component {
     static propTypes = {
-        recipeHeader: PropTypes.object
+        recipeHeader: PropTypes.object,
+        changePage: PropTypes.func
     };
 
     render() {
         const recipeHeader = this.props.recipeHeader || {};
         return (
-            <div className="recipe-header">
+            <button className="recipe-header" onClick={partial(
+                this.props.changePage,
+                pages.recipe,
+                {recipeId: recipeHeader.id}
+            )}>
                 <h3>{recipeHeader.title}</h3>
                 <h4>{recipeHeader.author}</h4>
                 <p>{recipeHeader.cook_time}</p>
@@ -18,8 +23,9 @@ class RecipeHeader extends Component {
                     src={recipeHeader.img_url}
                     alt={"recipe"}
                 />
-            </div>
+            </button>
         );
     }
 }
+
 export {RecipeHeader};
