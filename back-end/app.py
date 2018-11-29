@@ -53,10 +53,10 @@ def get_recipes():
     return jsonify(output)
 
 #GET one recipe by its id
-@app.route("/recipes/<recipeid>", methods=["GET"])
-def get_recipe(recipeid):
+@app.route("/recipes/<recipe_id>", methods=["GET"])
+def get_recipe(recipe_id):
     recipes = mongo.db.recipes
-    recipe = recipes.find_one({"id" : recipeid})
+    recipe = recipes.find_one({"id" : recipe_id})
     if recipe:
         output = {"id" : recipe["id"], "title" : recipe["title"],
                   "userId" : recipe["userId"],
@@ -67,6 +67,21 @@ def get_recipe(recipeid):
     else:
         output = "Recipe not found"
     return jsonify(output)
+
+#GET all recipes by a certain user
+@app.route("/recipes/users/<user_id>", methods=["GET"])
+def get_userrecipes(user_id):
+    output = []
+    recipes = mongo.db.recipes
+    for recipe in recipes.find({"userId" : user_id}):
+        output.append({"id" : recipe["id"], "title" : recipe["title"],
+                  "userId" : recipe["userId"],
+                  "cook_time" : recipe["cook_time"],
+                  "img_url" : recipe["img_url"],
+                  "ingredients" : recipe["ingredients"],
+                  "steps" : recipe["steps"]})
+    return jsonify(output)
+        
 
 #POST user
 @app.route("/users", methods=["POST"])
@@ -99,5 +114,5 @@ def create_recipe():
     return "Success"
 
 if __name__ == '__main__':
-    app.run()
-    #app.run(host="0.0.0.0", port=80)
+    #app.run()
+    app.run(host="0.0.0.0", port=80)
