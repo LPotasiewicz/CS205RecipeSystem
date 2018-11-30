@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
-import {getRecipes} from "./actions";
+import {getRecipeUser} from "./actions";
 import {store} from "./store";
 import {RecipeList} from "./recipe-list";
 
@@ -13,16 +13,16 @@ class Recipe extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-        this.dataListenerRecipes = this.dataListenerRecipes.bind(this);
-        store.listen("recipes", this.dataListenerRecipes);
+        this.dataListenerUserRecipes = this.dataListenerUserRecipes.bind(this);
+        store.listen("recipeUser", this.dataListenerUserRecipes);
     }
 
-    dataListenerRecipes(data) {
+    dataListenerUserRecipes(data) {
         this.setState({recipes: data});
     }
 
     componentDidMount() {
-        getRecipes();
+        getRecipeUser(this.props.recipe.userId);
     }
 
     render() {

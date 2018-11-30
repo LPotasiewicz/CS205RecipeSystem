@@ -1,0 +1,53 @@
+.top-bar {
+    display: inline-block;
+    background-color: #933;
+}
+.top-bar {
+     display: inline-block;
+     background-color: #933;
+ }
+.top-bar h2 {
+    display: inline-block;
+    margin: 8px;
+    color: white;
+    font-size: 27px;
+}
+.top-bar input {
+    height: 22px;
+    border: none;
+    margin: 10px;
+    vertical-align: top;
+    border-bottom: solid white 3px;
+    background: transparent;
+    color: white;
+}
+.top-bar button {
+    color: white;
+    height: 46px;
+    width: 46px;
+    border: none;
+    padding: 10px;
+    background: transparent;
+    vertical-align: top;
+    transition: background-color 0.2s ease;
+}
+.top-bar button:hover, .nav button:hover {
+    background-color: #711;
+}
+.nav {
+    display: inline-block;
+    background-color: #933;
+}
+.nav button{
+    color: white;
+    font-size: 21px;
+    border: none;
+    padding: 10px;
+    background: transparent;
+    vertical-align: top;
+    font-family: "Helvetica Neue";
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.2s ease;
+}

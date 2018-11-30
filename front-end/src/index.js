@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './add-a-recipe.css';
 import './recipe.css';
+import './top-bar.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

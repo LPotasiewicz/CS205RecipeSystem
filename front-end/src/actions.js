@@ -12,10 +12,10 @@ export function getRecipes() {
 
 export function getRecipeUser(id) {
     const Http = new XMLHttpRequest();
-    const url = "http://3.17.29.161/recipes/" + id;
+    const url = "http://3.17.29.161/recipes/users/" + id;
     Http.open("GET", url);
     Http.send();
     Http.onreadystatechange = (e) => {
-        store.add("recipe", Http.responseText ? JSON.parse(Http.responseText) : []);
+        store.add("recipeUser", Http.responseText ? JSON.parse(Http.responseText) : []);
     };
 }

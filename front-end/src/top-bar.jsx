@@ -9,7 +9,6 @@ class TopBar extends Component {
                 <h2>{"Millennial Recipe System"}</h2>
                 <input type="text" placeholder="Search..."/>
                 <button>{"🔎"}</button>
-                <button>{"Add a Recipe..."}</button>
             </div>
         );
     }

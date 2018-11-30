@@ -38,39 +38,50 @@ class AddARecipe extends Component {
             this.setState({localPayload});
         }
         return this.state.payload[target].map((element, i) => (
-            <input type="text" value={element} onChange={
-                partial(
-                    (t, event) => {
-                        const localPayload = this.state.payload;
-                        localPayload[t][i] = event.target.value;
-                        this.setState({localPayload});
-                    }, target)
-            }/>))
+            <div key={i}>
+                <input type="text" value={element} onChange={
+                    partial(
+                        (t, event) => {
+                            const localPayload = this.state.payload;
+                            localPayload[t][i] = event.target.value;
+                            this.setState({localPayload});
+                        }, target)
+                }/>
+                {this.state.payload[target].length - 1 !== i ?
+                    <button onClick={
+                        partial(
+                            (t) => {
+                                const localPayload = this.state.payload;
+                                localPayload[t].splice(i, 1);
+                                this.setState({localPayload});
+                            }, target)
+
+                    }>X</button> : null
+                }
+            </div>))
     }
 
     render() {
         return (
             <div className="add-a-recipe">
-                <form>
-                    Name:
-                    {this._createInput("title")}
+                Name:
+                {this._createInput("title")}
+                <br/>
+                Time to Cook:
+                {this._createInput("cook_time")}
+                <br/>
+                Image:
+                <input type="file"/>
+                <br/>
+                <section>
+                    Ingredients:
                     <br/>
-                    Time to Cook:
-                    {this._createInput("cook_time")}
+                    {this._createInputList("ingredients")}
                     <br/>
-                    Image:
-                    <input type="file"/>
+                    Steps:
                     <br/>
-                    <section>
-                        Ingredients:
-                        <br/>
-                        {this._createInputList("ingredients")}
-                        <br/>
-                        Steps:
-                        <br/>
-                        {this._createInputList("steps")}
-                    </section>
-                </form>
+                    {this._createInputList("steps")}
+                </section>
             </div>
         );
     }
