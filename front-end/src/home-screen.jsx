@@ -29,7 +29,7 @@ class HomeScreen extends Component {
     render() {
         return (
             <div className="home-screen">
-                <RecipeList recipes={this.state.recipes}/>
+                <RecipeList recipes={this.state.recipes} changePage={this.props.changePage}/>
 
             </div>
         );

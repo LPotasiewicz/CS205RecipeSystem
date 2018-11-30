@@ -14,7 +14,7 @@ class RecipeHeader extends Component {
             <button className="recipe-header" onClick={partial(
                 this.props.changePage,
                 pages.recipe,
-                {recipeId: recipeHeader.id}
+                {recipe: recipeHeader}
             )}>
                 <h3>{recipeHeader.title}</h3>
                 <h4>{recipeHeader.author}</h4>

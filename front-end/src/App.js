@@ -54,7 +54,7 @@ class App extends Component {
         return (
             <div className="app">
                 <TopBar/>
-                <Nav navOptions={Object.values(pages)} changePage={this.changePage}/>
+                <Nav navOptions={[pages.home, pages.addARecipe]} changePage={this.changePage}/>
                 {this._getPage()}
             </div>
         );

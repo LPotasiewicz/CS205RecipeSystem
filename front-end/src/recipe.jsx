@@ -7,24 +7,18 @@ import {RecipeList} from "./recipe-list";
 
 class Recipe extends Component {
     static propTypes = {
-        recipeId: PropTypes.string
+        recipe: PropTypes.object
     };
 
     constructor(props) {
         super(props);
         this.state = {};
-        this.dataListenerRecipe = this.dataListenerRecipe.bind(this);
         this.dataListenerRecipes = this.dataListenerRecipes.bind(this);
         store.listen("recipes", this.dataListenerRecipes);
-        store.listen("recipe" + props.recipeId, this.dataListenerRecipe);
-    }
-
-    dataListenerRecipe(data) {
-        this.setState({recipe: data})
     }
 
     dataListenerRecipes(data) {
-        this.setState({recipes: data})
+        this.setState({recipes: data});
     }
 
     componentDidMount() {
@@ -33,7 +27,7 @@ class Recipe extends Component {
 
     render() {
         const recipes = this.state.recipes || [];
-        const recipe = this.state.recipe || {};
+        const recipe = this.props.recipe || {};
         return (
             <div className="recipe">
                 <section className={"recipe-info"}>
@@ -50,12 +44,12 @@ class Recipe extends Component {
                     <h4>{"Cook Time:"}</h4>
                     <p className={"cook-time"}>{recipe.cook_time || "--"}</p>
                     <h4 className={"ingredients"}>{"Ingredients:"}</h4>
-                    {(recipe.ingredients || []).map((ing) =>
-                        <p className={"ingredient"}>{ing}</p>
+                    {(recipe.ingredients || []).map((ins, i) =>
+                        <p className={"ingredient"} key={ins+i}>{ins}</p>
                     )}
                     <h4 className={"instructions"}>{"Instructions:"}</h4>
-                    {(recipe.ingredients || []).map((ing) =>
-                        <p className={"ingredient"}>{ing}</p>
+                    {(recipe.ingredients || []).map((ing, i) =>
+                        <p className={"ingredient"} key={ing+i}>{ing}</p>
                     )}
                 </section>
                 <section className={"Related-recipes"}>
