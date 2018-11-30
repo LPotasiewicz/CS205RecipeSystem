@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {partial} from "./App";
+import {postRecipe} from "./actions";
 
 class AddARecipe extends Component {
 
@@ -9,11 +10,11 @@ class AddARecipe extends Component {
         this.state = {
             payload: {
                 title: "",
-                author: "",
                 cook_time: "",
                 img_url: "",
                 ingredients: [""],
-                steps: [""]
+                steps: [""],
+                userId: "0"
             }
         };
         this._createInput = this._createInput.bind(this);
@@ -82,6 +83,7 @@ class AddARecipe extends Component {
                     <br/>
                     {this._createInputList("steps")}
                 </section>
+                <button className={"goButton"} onClick={partial(postRecipe, this.state.payload)}>Submit</button>
             </div>
         );
     }

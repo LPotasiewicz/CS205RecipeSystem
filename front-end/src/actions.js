@@ -19,3 +19,11 @@ export function getRecipeUser(id) {
         store.add("recipeUser", Http.responseText ? JSON.parse(Http.responseText) : []);
     };
 }
+
+export function postRecipe(data) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://3.17.29.161/recipes", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(data));
+}
+
