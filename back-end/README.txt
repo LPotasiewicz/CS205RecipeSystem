@@ -14,7 +14,6 @@ Recipes:
 /recipes (all recipes)
 /recipes/<recipeId> (recipe by id)
 /recipes/users/<userId> (recipes by specific userId)
-/recipes/<searchTerm> (search recipes by a term)
 
 ============
 POST Request
