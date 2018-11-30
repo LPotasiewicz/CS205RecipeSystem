@@ -22,3 +22,9 @@
     width: 50%;
     vertical-align: top;
 }
+
+.recipe-details {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}

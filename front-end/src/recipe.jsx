@@ -34,6 +34,16 @@ class Recipe extends Component {
                     <div className={"recipe-title-area"}>
                         <h2>{recipe.title || "--"}</h2>
                         <p className={"author"}>{recipe.author || "--"}</p>
+                        <h4>{"Cook Time:"}</h4>
+                        <p className={"cook-time"}>{recipe.cook_time || "--"}</p>
+                        <h4 className={"ingredients"}>{"Ingredients:"}</h4>
+                        {(recipe.ingredients || []).map((ins, i) =>
+                            <p className={"ingredient"} key={ins + i}>{ins}</p>
+                        )}
+                        <h4 className={"instructions"}>{"Instructions:"}</h4>
+                        {(recipe.ingredients || []).map((ing, i) =>
+                            <p className={"ingredient"} key={ing + i}>{ing}</p>
+                        )}
                     </div>
                     <div className={"img-container"}>
                         <img
@@ -41,16 +51,9 @@ class Recipe extends Component {
                             alt={"Recipe"}
                         />
                     </div>
-                    <h4>{"Cook Time:"}</h4>
-                    <p className={"cook-time"}>{recipe.cook_time || "--"}</p>
-                    <h4 className={"ingredients"}>{"Ingredients:"}</h4>
-                    {(recipe.ingredients || []).map((ins, i) =>
-                        <p className={"ingredient"} key={ins+i}>{ins}</p>
-                    )}
-                    <h4 className={"instructions"}>{"Instructions:"}</h4>
-                    {(recipe.ingredients || []).map((ing, i) =>
-                        <p className={"ingredient"} key={ing+i}>{ing}</p>
-                    )}
+                    <section className={"recipe-details"}>
+
+                    </section>
                 </section>
                 <section className={"Related-recipes"}>
                     <h4>{"Other recipes by this user:"}</h4>
