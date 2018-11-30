@@ -38,7 +38,7 @@ class App extends Component {
             case(pages.home):
                 return(<HomeScreen changePage={this.changePage}/>);
             case(pages.recipe):
-                return(<Recipe {...this.state.pageState}/>);
+                return(<Recipe {...this.state.pageProps}/>);
             case(pages.addARecipe):
                 return(<AddARecipe/>);
             default:
@@ -46,8 +46,8 @@ class App extends Component {
         }
     }
 
-    changePage(option, pageState = {}) {
-        this.setState({page: option, pageState})
+    changePage(option, pageProps = {}) {
+        this.setState({page: option, pageProps})
     }
 
     render() {
