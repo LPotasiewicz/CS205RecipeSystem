@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.1ee6f05c.chunk.css",
-  "main.js": "/static/js/main.a659af49.chunk.js",
-  "main.js.map": "/static/js/main.a659af49.chunk.js.map",
-  "static/js/1.8de78045.chunk.js": "/static/js/1.8de78045.chunk.js",
-  "static/js/1.8de78045.chunk.js.map": "/static/js/1.8de78045.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/css/main.1ee6f05c.chunk.css.map": "/static/css/main.1ee6f05c.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.931f48d71e110afa292c34bbed726566.js": "/precache-manifest.931f48d71e110afa292c34bbed726566.js",
-  "service-worker.js": "/service-worker.js"
+  "main.css": "/CS205RecipeSystem/front-end/hosting/static/css/main.1ee6f05c.chunk.css",
+  "main.js": "/CS205RecipeSystem/front-end/hosting/static/js/main.b909c63f.chunk.js",
+  "main.js.map": "/CS205RecipeSystem/front-end/hosting/static/js/main.b909c63f.chunk.js.map",
+  "static/js/1.8de78045.chunk.js": "/CS205RecipeSystem/front-end/hosting/static/js/1.8de78045.chunk.js",
+  "static/js/1.8de78045.chunk.js.map": "/CS205RecipeSystem/front-end/hosting/static/js/1.8de78045.chunk.js.map",
+  "runtime~main.js": "/CS205RecipeSystem/front-end/hosting/static/js/runtime~main.98fddd81.js",
+  "runtime~main.js.map": "/CS205RecipeSystem/front-end/hosting/static/js/runtime~main.98fddd81.js.map",
+  "static/css/main.1ee6f05c.chunk.css.map": "/CS205RecipeSystem/front-end/hosting/static/css/main.1ee6f05c.chunk.css.map",
+  "index.html": "/CS205RecipeSystem/front-end/hosting/index.html",
+  "precache-manifest.8aef9877f0a8cd974add3e72e2ebd574.js": "/CS205RecipeSystem/front-end/hosting/precache-manifest.8aef9877f0a8cd974add3e72e2ebd574.js",
+  "service-worker.js": "/CS205RecipeSystem/front-end/hosting/service-worker.js"
 }
