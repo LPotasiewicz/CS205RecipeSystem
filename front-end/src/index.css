@@ -23,7 +23,10 @@ body {
     font-size: 14pt;
     color: darkcyan;
 }
+.top-bar img {
+    max-height: 30px;
 
+}
 /* RECIPE LIST */
 .recipe-list{
     padding: 1em;

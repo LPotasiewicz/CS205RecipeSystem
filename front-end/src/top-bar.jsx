@@ -8,7 +8,11 @@ class TopBar extends Component {
             <div className="top-bar">
                 <h2>{"Millennial Recipe System"}</h2>
                 <input type="text" placeholder="Search..."/>
-                <button>{"🔎"}</button>
+                <button><img
+                    src={"http://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/500px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"}
+                    alt={"Search Icon"}
+                    />
+                    </button>
             </div>
         );
     }

@@ -1,67 +1,49 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './App.css';
-import {getRecipeUser} from "./actions";
-import {store} from "./store";
-import {RecipeList} from "./recipe-list";
+import {RecipeHeader} from "./recipe-header";
 
 class Recipe extends Component {
     static propTypes = {
-        recipe: PropTypes.object
+        text: PropTypes.string
     };
 
-    constructor(props) {
-        super(props);
-        this.state = {};
-        this.dataListenerUserRecipes = this.dataListenerUserRecipes.bind(this);
-        store.listen("recipeUser", this.dataListenerUserRecipes);
+    _getMeData() {
+        const Http = new XMLHttpRequest();
+        const url='https://perfect-seahorse-89.localtunnel.me/users';
+        Http.open("GET", url);
+        Http.send();
+        Http.onreadystatechange = (e) => {
+            console.log(Http.responseText);
+        }
     }
 
-    dataListenerUserRecipes(data) {
-        this.setState({recipes: data});
-    }
 
-    componentDidMount() {
-        getRecipeUser(this.props.recipe.userId);
-    }
 
     render() {
-        const recipes = this.state.recipes || [];
-        const recipe = this.props.recipe || {};
+        const recipes = ["recipe 1", "recipe 2", "recipe 3", "recipe 4", "recipe 5"];
         return (
             <div className="recipe">
                 <section className={"recipe-info"}>
-                    <div className={"recipe-title-area"}>
-                        <h2>{recipe.title || "--"}</h2>
-                        <p className={"author"}>{recipe.author || "--"}</p>
-                        <h4>{"Cook Time:"}</h4>
-                        <p className={"cook-time"}>{recipe.cook_time || "--"}</p>
-                        <h4 className={"ingredients"}>{"Ingredients:"}</h4>
-                        {(recipe.ingredients || []).map((ins, i) =>
-                            <p className={"ingredient"} key={ins + i}>{ins}</p>
-                        )}
-                        <h4 className={"instructions"}>{"Instructions:"}</h4>
-                        {(recipe.ingredients || []).map((ing, i) =>
-                            <p className={"ingredient"} key={ing + i}>{ing}</p>
-                        )}
-                    </div>
-                    <div className={"img-container"}>
-                        <img
-                            src={"https://i.imgflip.com/1ujwer.jpg"}
-                            alt={"Recipe"}
-                        />
-                    </div>
-                    <section className={"recipe-details"}>
-
-                    </section>
+                    <h2>{"Recipe Title"}</h2>
+                    <p className={"author"}>{"Author"}</p>
+                    <img
+                        src={"https://i.imgflip.com/1ujwer.jpg"}
+                        alt={"Recipe"}
+                    />
+                    <p className={"description"}>{"Description"}</p>
+                    <p className={"ingredients"}>{"Recipe Ingredients"}</p>
+                    <p className={"instructions"}>{"Recipe Instructions"}</p>
                 </section>
                 <section className={"Related-recipes"}>
                     <h4>{"Other recipes by this user:"}</h4>
-                    <RecipeList recipes={recipes}/>
+                    {recipes.map((r, i)=>
+                        <RecipeHeader title={r} key={r + i}/>
+                    )}
                 </section>
+                <button onClick={this._getMeData}>click me for data</button>
             </div>
         );
     }
 }
-
 export {Recipe};
