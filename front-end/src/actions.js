@@ -6,7 +6,11 @@ export function getRecipes() {
     Http.open("GET", url);
     Http.send();
     Http.onreadystatechange = (e) => {
-        store.add("recipes", Http.responseText ? JSON.parse(Http.responseText) : []);
+        try {
+            store.add("recipes", Http.responseText ? JSON.parse(Http.responseText) : []);
+        } catch (e) {
+            console.log(e);
+        }
     };
 }
 
@@ -16,7 +20,11 @@ export function getRecipeUser(id) {
     Http.open("GET", url);
     Http.send();
     Http.onreadystatechange = (e) => {
-        store.add("recipeUser", Http.responseText ? JSON.parse(Http.responseText) : []);
+        try {
+            store.add("recipeUser", Http.responseText ? JSON.parse(Http.responseText) : []);
+        } catch (e) {
+            console.log(e);
+        }
     };
 }
 

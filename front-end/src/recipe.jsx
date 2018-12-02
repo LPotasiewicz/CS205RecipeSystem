@@ -48,7 +48,7 @@ class Recipe extends Component {
                     </div>
                     <div className={"img-container"}>
                         <img
-                            src={"https://i.imgflip.com/1ujwer.jpg"}
+                            src={recipe.img_url || ""}
                             alt={"Recipe"}
                         />
                     </div>
