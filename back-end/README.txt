@@ -51,3 +51,10 @@ Recipes:
 	           *just remember to follow proper name assignment
            ]
 }
+
+==============
+DELETE Request
+==============
+
+/users/delete/<userId>
+/recipes/delete/<recipeId>
