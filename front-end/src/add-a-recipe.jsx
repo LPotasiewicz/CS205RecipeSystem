@@ -8,6 +8,7 @@ class AddARecipe extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            submitted: false,
             payload: {
                 title: "",
                 cook_time: "",
@@ -17,6 +18,7 @@ class AddARecipe extends Component {
                 userId: "0"
             }
         };
+        this._submit = this._submit.bind(this);
         this._createInput = this._createInput.bind(this);
         this._createInputList = this._createInputList.bind(this);
     }
@@ -30,6 +32,11 @@ class AddARecipe extends Component {
                     this.setState({localPayload});
                 }, target)
         }/>
+    }
+
+    _submit() {
+        postRecipe(this.state.payload);
+        this.setState({submitted: true});
     }
 
     _createInputList(target) {
@@ -63,6 +70,15 @@ class AddARecipe extends Component {
     }
 
     render() {
+        if (this.state.submitted) {
+            return (
+                <div className="add-a-recipe">
+                    <div className={""}>
+                        {"Your recipe has been submitted."}
+                    </div>
+                </div>
+            );
+        }
         return (
             <div className="add-a-recipe">
                 Name:
@@ -83,7 +99,7 @@ class AddARecipe extends Component {
                     <br/>
                     {this._createInputList("steps")}
                 </section>
-                <button className={"goButton"} onClick={partial(postRecipe, this.state.payload)}>Submit</button>
+                <button className={"goButton"} onClick={this._submit}>Submit</button>
             </div>
         );
     }
