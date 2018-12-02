@@ -45,7 +45,7 @@ def get_recipes():
     output = []
     for recipe in recipes.find():
         output.append({"id" : recipe["id"], "title" : recipe["title"],
-                       "userId" : recipe["userId"],
+                       "userId" : recipe["userId"], "author" : recipe["author"],
                        "cook_time" : recipe["cook_time"],
                        "img_url" : recipe["img_url"],
                        "ingredients" : recipe["ingredients"],
@@ -59,7 +59,7 @@ def get_recipe(recipe_id):
     recipe = recipes.find_one({"id" : recipe_id})
     if recipe:
         output = {"id" : recipe["id"], "title" : recipe["title"],
-                  "userId" : recipe["userId"],
+                  "userId" : recipe["userId"], "author" : recipe["author"],
                   "cook_time" : recipe["cook_time"],
                   "img_url" : recipe["img_url"],
                   "ingredients" : recipe["ingredients"],
@@ -75,7 +75,7 @@ def get_userrecipes(user_id):
     recipes = mongo.db.recipes
     for recipe in recipes.find({"userId" : user_id}):
         output.append({"id" : recipe["id"], "title" : recipe["title"],
-                  "userId" : recipe["userId"],
+                  "userId" : recipe["userId"], "author" : recipe["author"],
                   "cook_time" : recipe["cook_time"],
                   "img_url" : recipe["img_url"],
                   "ingredients" : recipe["ingredients"],
@@ -101,13 +101,19 @@ def create_user():
 def create_recipe():
     global recipeId
     recipe = mongo.db.recipes
+    user = mongo.db.users
     title = request.json["title"]
     userId = request.json["userId"]
     cook_time = request.json["cook_time"]
     img_url = request.json["img_url"]
     ingredients = request.json["ingredients"]
     steps = request.json["steps"]
-    new_recipe = recipe.insert({"id" : str(recipeId), "title" : title, "userId" : userId, "cook_time" : cook_time,
+    query = user.find({"id" : userId})
+    for a in query:
+        author = a["name"]
+    new_recipe = recipe.insert({"id" : str(recipeId), "title" : title,
+                            "userId" : userId, "author" : author,
+                            "cook_time" : cook_time,
                             "img_url": img_url, "ingredients" : ingredients,
                             "steps": steps})
     recipeId += 1
