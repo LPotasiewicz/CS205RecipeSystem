@@ -119,6 +119,28 @@ def create_recipe():
     recipeId += 1
     return "Success"
 
+#Delete user by id
+@app.route("/users/delete/<user_id>", methods=["DELETE"])
+def delete_user(user_id):
+    users = mongo.db.users
+    user = users.find_one({"id" : user_id})
+    if user:
+        users.delete_one({"id" : user_id})
+        return "User (ID: " + user_id + ") deleted"
+    else:
+        return "User not found"
+
+#Delete recipe by id
+@app.route("/recipes/delete/<recipe_id>", methods=["DELETE"])
+def delete_recipe(recipe_id):
+    recipes = mongo.db.recipes
+    recipe = recipes.find_one({"id" : recipe_id})
+    if recipe:
+        recipes.delete_one({"id" : recipe_id})
+        return "Recipe (ID: " + recipe_id + ") deleted"
+    else:
+        return "Recipe not found"
+    
 if __name__ == '__main__':
-    #app.run()
-    app.run(host="0.0.0.0", port=80)
+    app.run()
+    #app.run(host="0.0.0.0", port=80)
