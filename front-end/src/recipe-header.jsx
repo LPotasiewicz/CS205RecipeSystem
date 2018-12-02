@@ -16,13 +16,17 @@ class RecipeHeader extends Component {
                 pages.recipe,
                 {recipe: recipeHeader}
             )}>
-                <h3>{recipeHeader.title}</h3>
-                <h4>{recipeHeader.author}</h4>
-                <p>{recipeHeader.cook_time}</p>
-                <img
-                    src={recipeHeader.img_url}
-                    alt={"recipe"}
-                />
+                <div className={"header-image-wrapper"}>
+                    <img
+                        src={recipeHeader.img_url || "https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/frying-pan-pizza-easy-recipe-collection.jpg"}
+                        alt={"recipe"}
+                    />
+                </div>
+                <h3>{recipeHeader.title || "--"}</h3>
+                <p className={"header-label"}>{"Author:"}</p>
+                <h4>{recipeHeader.author || "--"}</h4><br/>
+                <p className={"header-label"}>{"Cook Time:"}</p>
+                <p>{recipeHeader.cook_time || "--"}</p>
             </button>
         );
     }
