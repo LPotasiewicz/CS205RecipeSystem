@@ -7,7 +7,8 @@ import {RecipeList} from "./recipe-list";
 
 class Recipe extends Component {
     static propTypes = {
-        recipe: PropTypes.object
+        recipe: PropTypes.object,
+        changePage: PropTypes.func
     };
 
     constructor(props) {
@@ -57,7 +58,7 @@ class Recipe extends Component {
                 </section>
                 <section className={"Related-recipes"}>
                     <h4>{"Other recipes by this user:"}</h4>
-                    <RecipeList recipes={recipes}/>
+                    <RecipeList recipes={recipes} changePage={this.props.changePage}/>
                 </section>
             </div>
         );

@@ -38,7 +38,7 @@ class App extends Component {
             case(pages.home):
                 return(<HomeScreen changePage={this.changePage}/>);
             case(pages.recipe):
-                return(<Recipe {...this.state.pageProps}/>);
+                return(<Recipe {...this.state.pageProps} changePage={this.changePage}/>);
             case(pages.addARecipe):
                 return(<AddARecipe/>);
             default:
