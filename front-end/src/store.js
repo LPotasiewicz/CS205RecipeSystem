@@ -7,9 +7,14 @@ class Store extends React.Component {
         this.listeners = [];
     }
 
+    yell(id) {
+        this.listeners[id](this._data[id]);
+    }
+
     add(id, data) {
         this._data[id] = data;
-        this.listeners[id](data);
+        console.log(this._data);
+        this.yell(id);
     }
 
     listen(id, callback){

@@ -5,11 +5,15 @@ export function getRecipes() {
     const url = "http://3.17.29.161/recipes";
     Http.open("GET", url);
     Http.send();
+    store.yell("recipes");
     Http.onreadystatechange = (e) => {
-        try {
-            store.add("recipes", Http.responseText ? JSON.parse(Http.responseText) : []);
-        } catch (e) {
-            console.log(e);
+        if (Http.readyState === 4 && Http.status === 200) {
+            try {
+                store.add("recipes", Http.responseText ? JSON.parse(Http.responseText) : []);
+            } catch (e) {
+                console.log(e);
+            }
+
         }
     };
 }
@@ -19,11 +23,14 @@ export function getRecipeUser(id) {
     const url = "http://3.17.29.161/recipes/users/" + id;
     Http.open("GET", url);
     Http.send();
+    store.yell("recipeUser" + id);
     Http.onreadystatechange = (e) => {
-        try {
-            store.add("recipeUser", Http.responseText ? JSON.parse(Http.responseText) : []);
-        } catch (e) {
-            console.log(e);
+        if (Http.readyState === 4 && Http.status === 200) {
+            try {
+                store.add("recipeUser" + id, Http.responseText ? JSON.parse(Http.responseText) : []);
+            } catch (e) {
+                console.log(e);
+            }
         }
     };
 }
@@ -34,4 +41,3 @@ export function postRecipe(data) {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(data));
 }
-

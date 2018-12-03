@@ -14,7 +14,6 @@ class Recipe extends Component {
         super(props);
         this.state = {};
         this.dataListenerUserRecipes = this.dataListenerUserRecipes.bind(this);
-        store.listen("recipeUser", this.dataListenerUserRecipes);
     }
 
     dataListenerUserRecipes(data) {
@@ -22,6 +21,7 @@ class Recipe extends Component {
     }
 
     componentDidMount() {
+        store.listen("recipeUser" + this.props.recipe.userId, this.dataListenerUserRecipes);
         getRecipeUser(this.props.recipe.userId);
     }
 
@@ -57,7 +57,7 @@ class Recipe extends Component {
                 </section>
                 <section className={"related-recipes"}>
                     <h4>{"Other recipes by this user:"}</h4>
-                    <RecipeList recipes={recipes} title={""}/>
+                    <RecipeList recipes={recipes} changePage={this.props.changePage} title={""}/>
                 </section>
             </div>
         );
