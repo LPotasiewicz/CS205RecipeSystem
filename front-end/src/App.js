@@ -5,11 +5,15 @@ import {HomeScreen} from "./home-screen";
 import {Nav} from "./nav";
 import {TopBar} from "./top-bar";
 import {AddARecipe} from "./add-a-recipe";
+import {Login} from "./login";
+import {SignUp} from "./sign-up";
 
 export const pages = {
     home: "Home",
     recipe: "Recipe",
-    addARecipe: "Add A Recipe"
+    addARecipe: "Add A Recipe",
+    login: "Login",
+    signUp: "Sign Up"
 };
 
 export function partial(fn /*, args...*/) {
@@ -41,6 +45,10 @@ class App extends Component {
                 return(<Recipe {...this.state.pageProps} changePage={this.changePage}/>);
             case(pages.addARecipe):
                 return(<AddARecipe/>);
+            case(pages.login):
+                return(<Login/>);
+            case(pages.signUp):
+                return(<SignUp/>);
             default:
                 return (<h1>{"How did you get here"}</h1>)
         }
@@ -54,7 +62,7 @@ class App extends Component {
         return (
             <div className="app">
                 <TopBar/>
-                <Nav navOptions={[pages.home, pages.addARecipe]} changePage={this.changePage}/>
+                <Nav navOptions={[pages.home, pages.addARecipe, pages.login, pages.signUp]} changePage={this.changePage}/>
                 {this._getPage()}
             </div>
         );

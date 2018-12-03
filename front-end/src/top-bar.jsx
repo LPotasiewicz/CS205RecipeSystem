@@ -12,7 +12,7 @@ class TopBar extends Component {
                     src={"http://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/500px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"}
                     alt={"Search Icon"}
                     />
-                    </button>
+                </button>
             </div>
         );
     }
