@@ -130,6 +130,7 @@ class AddARecipe extends Component {
                     }
                 }/>
                 {/*{this.state.img_url ? <iframe src={"imageRip.php/?url=" + this.state.img_url}></iframe> : null}*/}
+                <br/>
                 <img src={this.state.payload.img_url} alt={"recipe visual"}/>
                 <br/>
                 <section>

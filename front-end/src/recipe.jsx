@@ -41,8 +41,8 @@ class Recipe extends Component {
                             <p className={"ingredient"} key={ins + i}>{ins}</p>
                         )}
                         <h4 className={"instructions"}>{"Instructions:"}</h4>
-                        {(recipe.ingredients || []).map((ing, i) =>
-                            <p className={"ingredient"} key={ing + i}>{ing}</p>
+                        {(recipe.steps || []).map((ing, i) =>
+                            <p className={"step"} key={ing + i}>{ing}</p>
                         )}
                     </div>
                     <div className={"img-container"}>

@@ -1,13 +1,26 @@
 .recipe {
     text-align: left;
+    color: #933;
 }
 
+.recipe p{
+    margin-left: 0.5em;
+}
+.recipe h2 {
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.recipe h4 {
+    font-size: 16pt;
+    margin-left: 1em;
+}
 .recipe img {
-    max-width: 30%;
+    max-width: 40%;
     width: 100%;
-    margin: 1em;
-    margin-top: -5vw;
-    border: none;
+    margin: 5em 1em 1em;
+    border: solid;
+
 }
 
 .recipe .img-container {

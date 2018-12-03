@@ -46,7 +46,6 @@ body {
     background-color: antiquewhite;
     margin: 5px;
     padding: 0;
-    border: thin dotted;
     display: inline-block;
     border-radius: 25px;
     box-shadow: 0 0 10px #522;
@@ -62,7 +61,7 @@ body {
 }
 .recipe-header h4 {
     display: inline-block;
-    color: lightseagreen;
+    color: #933;
     font-size: 12pt;
     margin: 0;
 }
@@ -81,7 +80,6 @@ body {
 }
 .recipe-header .header-label {
     margin-right: 5px;
-    color: lightseagreen;
 }
 .header-image-wrapper {
     width: 100%;
