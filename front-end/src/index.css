@@ -125,6 +125,6 @@ body {
 
 /* RELATED-RECIPES */
 
-.related-recipes h4{
+.related-recipes > h4{
     margin-left: 1em;
 }

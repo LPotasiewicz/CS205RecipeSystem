@@ -55,9 +55,9 @@ class Recipe extends Component {
 
                     </section>
                 </section>
-                <section className={"Related-recipes"}>
+                <section className={"related-recipes"}>
                     <h4>{"Other recipes by this user:"}</h4>
-                    <RecipeList recipes={recipes}/>
+                    <RecipeList recipes={recipes} title={""}/>
                 </section>
             </div>
         );

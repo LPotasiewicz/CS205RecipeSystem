@@ -11,11 +11,11 @@
     font-weight: bold;
 }
 
-.recipe h4 {
+.recipe-info h4 {
     font-size: 16pt;
     margin-left: 1em;
 }
-.recipe img {
+.recipe-info img {
     max-width: 40%;
     width: 100%;
     margin: 5em 1em 1em;
