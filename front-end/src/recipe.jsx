@@ -47,7 +47,7 @@ class Recipe extends Component {
                     </div>
                     <div className={"img-container"}>
                         <img
-                            src={"https://i.imgflip.com/1ujwer.jpg"}
+                            src={recipe.img_url || "https://i.imgflip.com/1ujwer.jpg"}
                             alt={"Recipe"}
                         />
                     </div>
@@ -57,7 +57,12 @@ class Recipe extends Component {
                 </section>
                 <section className={"related-recipes"}>
                     <h4>{"Other recipes by this user:"}</h4>
-                    <RecipeList recipes={recipes} changePage={this.props.changePage} title={""}/>
+                    <RecipeList
+                        recipes={recipes}
+                        changePage={this.props.changePage}
+                        title={" "}
+                        exclusionIds={[recipe.id]}
+                    />
                 </section>
             </div>
         );

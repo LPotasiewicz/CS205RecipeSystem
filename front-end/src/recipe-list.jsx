@@ -7,7 +7,8 @@ class RecipeList extends Component {
     static propTypes = {
         title: PropTypes.string,
         recipes: PropTypes.array,
-        changePage: PropTypes.func
+        changePage: PropTypes.func,
+        exclusionIds: PropTypes.array
     };
 
     render() {
@@ -16,7 +17,9 @@ class RecipeList extends Component {
             <div className="recipe-list">
                 <h2>{this.props.title || "Recipe List"}</h2>
                 {recipes ? recipes.map((r, i)=>
-                    <RecipeHeader recipeHeader={r} key={r.title + i} changePage={this.props.changePage}/>
+                    (this.props.exclusionIds || []).indexOf(r.id) ?
+                        <RecipeHeader recipeHeader={r} key={r.title + i} changePage={this.props.changePage}/> :
+                        null
                 ) : null}
             </div>
         );
