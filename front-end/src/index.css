@@ -40,32 +40,61 @@ body {
 
 /* RECIPE BLOCK */
 .recipe-header {
-    max-width: 30%;
+    vertical-align: top;
+    overflow: hidden;
+    width: 360px;
     background-color: antiquewhite;
     margin: 5px;
-    padding: 1em;
+    padding: 0;
     border: thin dotted;
     display: inline-block;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #522;
 }
 .recipe-header h2 {
     color: darkcyan;
     font-size: 20pt;
+    margin: 0;
+}
+.recipe-header h3 {
+    margin: 10px 0 0 0;
+    font-size: 26px;
 }
 .recipe-header h4 {
+    display: inline-block;
     color: lightseagreen;
     font-size: 12pt;
+    margin: 0;
 }
 .recipe-header p {
     font-size: 11pt;
     font-style: italic;
+    display: inline-block;
+    margin: 0;
 }
 .recipe-header img {
-    max-width: 20%;
+    max-width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     border-radius: 25px;
-    padding: 1em;
+}
+.recipe-header .header-label {
+    margin-right: 5px;
+    color: lightseagreen;
+}
+.header-image-wrapper {
+    width: 100%;
+    height: 325px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+.header-image-wrapper img {
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
 }
 
 /* RECIPE-INFO */

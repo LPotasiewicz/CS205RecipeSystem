@@ -8,6 +8,7 @@ class AddARecipe extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            submitted: false,
             payload: {
                 title: "",
                 cook_time: "",
@@ -17,6 +18,7 @@ class AddARecipe extends Component {
                 userId: "0"
             }
         };
+        this._submit = this._submit.bind(this);
         this._createInput = this._createInput.bind(this);
         this._createInputList = this._createInputList.bind(this);
     }
@@ -30,6 +32,12 @@ class AddARecipe extends Component {
                     this.setState({localPayload});
                 }, target)
         }/>
+    }
+
+    _submit() {
+
+        postRecipe(this.state.payload);
+        this.setState({submitted: true});
     }
 
     _createInputList(target) {
@@ -62,7 +70,44 @@ class AddARecipe extends Component {
             </div>))
     }
 
+    toDataURL(src, callback, outputFormat) {
+        var img = new Image();
+        img.crossOrigin = 'Anonymous';
+        img.onload = function () {
+            var canvas = document.createElement('CANVAS');
+            var ctx = canvas.getContext('2d');
+            var dataURL;
+            canvas.height = this.naturalHeight;
+            canvas.width = this.naturalWidth;
+            ctx.drawImage(this, 0, 0);
+            dataURL = canvas.toDataURL(outputFormat);
+            callback(dataURL);
+        };
+        img.src = src;
+        if (img.complete || img.complete === undefined) {
+            img.src = "https://www.wellplated.com/wp-content/uploads/2017/12/Hoppin-John-recipe-600x629.jpg";
+            img.src = src;
+        }
+    }
+
+
     render() {
+        if (this.state.submitted) {
+            return (
+                <div className="add-a-recipe">
+                    <div className={""}>
+                        {"Your recipe has been submitted."}
+                    </div>
+                </div>
+            );
+        }
+        if (document.getElementById("data")) {
+            const localPayload = this.state.payload;
+            localPayload.img_url = document.getElementById("data").innerHTML;
+            if (this.state.payload.img_url !== localPayload.img_url) {
+                this.setState({localPayload});
+            }
+        }
         return (
             <div className="add-a-recipe">
                 Name:
@@ -71,8 +116,21 @@ class AddARecipe extends Component {
                 Time to Cook:
                 {this._createInput("cook_time")}
                 <br/>
-                Image:
-                <input type="file"/>
+                Image URL:
+                <input type="text" value={this.state.img_url} onChange={
+                    (event) => {
+                        this.setState({img_url: event.target.value});
+                        this.toDataURL(
+                            event.target.value,
+                            (dataUrl) => {
+                                const localPayload = this.state.payload;
+                                localPayload.img_url = dataUrl;
+                                this.setState({localPayload});
+                            });
+                    }
+                }/>
+                {/*{this.state.img_url ? <iframe src={"imageRip.php/?url=" + this.state.img_url}></iframe> : null}*/}
+                <img src={this.state.payload.img_url} alt={"recipe visual"}/>
                 <br/>
                 <section>
                     Ingredients:
@@ -83,7 +141,7 @@ class AddARecipe extends Component {
                     <br/>
                     {this._createInputList("steps")}
                 </section>
-                <button className={"goButton"} onClick={partial(postRecipe, this.state.payload)}>Submit</button>
+                <button className={"goButton"} onClick={this._submit}>Submit</button>
             </div>
         );
     }

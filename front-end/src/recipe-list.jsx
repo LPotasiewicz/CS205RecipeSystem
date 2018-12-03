@@ -5,6 +5,7 @@ import {RecipeHeader} from "./recipe-header";
 
 class RecipeList extends Component {
     static propTypes = {
+        title: PropTypes.string,
         recipes: PropTypes.array,
         changePage: PropTypes.func
     };
@@ -13,7 +14,7 @@ class RecipeList extends Component {
         const recipes = this.props.recipes || [] ;
         return (
             <div className="recipe-list">
-                <h2>{"Recipe List"}</h2>
+                <h2>{this.props.title || "Recipe List"}</h2>
                 {recipes ? recipes.map((r, i)=>
                     <RecipeHeader recipeHeader={r} key={r.title + i} changePage={this.props.changePage}/>
                 ) : null}
