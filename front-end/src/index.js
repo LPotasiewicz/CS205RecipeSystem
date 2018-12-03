@@ -4,6 +4,8 @@ import './index.css';
 import './add-a-recipe.css';
 import './recipe.css';
 import './top-bar.css';
+import './login.css';
+import './sign-up.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

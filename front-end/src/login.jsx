@@ -9,16 +9,14 @@ class Login extends Component {
                 <form>
                     <h2>Login</h2>
                     <label>
-                        Email:
-                        <input type="email" name="email" />
+                        <input type="email" name="email" placeholder="Email" />
                     </label>
                     <br />
                     <label>
-                        Password:
-                        <input type="text" name="password" />
+                        <input type="text" name="password" placeholder="Password" />
                     </label>
                     <br />
-                    <input type="submit" value="Login" />
+                    <input className="submit" type="submit" value="Login" />
                 </form>
             </div>
         );
