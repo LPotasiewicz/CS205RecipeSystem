@@ -1,0 +1,20 @@
+.login {
+    margin: auto;
+    padding: 10px;
+    width: 30%;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    border-radius: 10px;
+}
+
+.login input {
+    margin: 10px;
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+.submit {
+    background-color: #00b551;
+    color: white;
+}
