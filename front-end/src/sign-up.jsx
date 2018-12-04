@@ -21,7 +21,7 @@ class SignUp extends Component {
                     </label>
                     <br />
                     <label>
-                        <input type="email" name="confirmPassword" placeholder="Confirm Password" />
+                        <input type="text" name="confirmPassword" placeholder="Confirm Password" />
                     </label>
                     <br />
                     <input className="submit" type="submit" value="Sign Up" />
