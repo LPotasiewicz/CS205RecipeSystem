@@ -35,12 +35,17 @@ class App extends Component {
         super(props);
         this.state = {page: pages.home};
         this.changePage = this.changePage.bind(this);
+        this.updateSearch = this.updateSearch.bind(this);
+    }
+
+    updateSearch (searchTerm) {
+        this.setState({searchTerm});
     }
 
     _getPage() {
         switch(this.state.page) {
             case(pages.home):
-                return(<HomeScreen changePage={this.changePage}/>);
+                return(<HomeScreen changePage={this.changePage} searchTerm={this.state.searchTerm}/>);
             case(pages.recipe):
                 return(<Recipe {...this.state.pageProps} changePage={this.changePage}/>);
             case(pages.addARecipe):
@@ -61,7 +66,7 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                <TopBar/>
+                <TopBar updateSearch={this.updateSearch}/>
                 <Nav navOptions={[pages.home, pages.addARecipe, pages.login, pages.signUp]} changePage={this.changePage}/>
                 {this._getPage()}
             </div>

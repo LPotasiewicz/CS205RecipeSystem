@@ -29,13 +29,12 @@ class AddARecipe extends Component {
                 (t, event) => {
                     const localPayload = this.state.payload;
                     localPayload[t] = event.target.value;
-                    this.setState({localPayload});
+                    this.setState({payload: localPayload});
                 }, target)
         }/>
     }
 
     _submit() {
-
         postRecipe(this.state.payload);
         this.setState({submitted: true});
     }
@@ -44,7 +43,7 @@ class AddARecipe extends Component {
         if (this.state.payload[target].slice(-1)[0] !== "") {
             const localPayload = this.state.payload;
             localPayload[target].push("");
-            this.setState({localPayload});
+            this.setState({payload: localPayload});
         }
         return this.state.payload[target].map((element, i) => (
             <div key={i}>
@@ -53,7 +52,7 @@ class AddARecipe extends Component {
                         (t, event) => {
                             const localPayload = this.state.payload;
                             localPayload[t][i] = event.target.value;
-                            this.setState({localPayload});
+                            this.setState({payload: localPayload});
                         }, target)
                 }/>
                 {this.state.payload[target].length - 1 !== i ?
@@ -62,7 +61,7 @@ class AddARecipe extends Component {
                             (t) => {
                                 const localPayload = this.state.payload;
                                 localPayload[t].splice(i, 1);
-                                this.setState({localPayload});
+                                this.setState({payload: localPayload});
                             }, target)
 
                     }>X</button> : null
@@ -105,7 +104,7 @@ class AddARecipe extends Component {
             const localPayload = this.state.payload;
             localPayload.img_url = document.getElementById("data").innerHTML;
             if (this.state.payload.img_url !== localPayload.img_url) {
-                this.setState({localPayload});
+                this.setState({payload: localPayload});
             }
         }
         return (
@@ -125,7 +124,7 @@ class AddARecipe extends Component {
                             (dataUrl) => {
                                 const localPayload = this.state.payload;
                                 localPayload.img_url = dataUrl;
-                                this.setState({localPayload});
+                                this.setState({payload: localPayload});
                             });
                     }
                 }/>

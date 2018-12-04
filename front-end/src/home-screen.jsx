@@ -8,7 +8,8 @@ import {getRecipes} from "./actions";
 class HomeScreen extends Component {
     static propTypes = {
         text: PropTypes.string,
-        changePage: PropTypes.func
+        changePage: PropTypes.func,
+        searchTerm: PropTypes.string
     };
 
     constructor(props) {
@@ -22,16 +23,29 @@ class HomeScreen extends Component {
         this.setState({recipes: data})
     }
 
-    componentDidMount(){
+    componentDidMount() {
         getRecipes();
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const localRecipes = (this.state.recipes || []).filter((r) =>
+            JSON.stringify(r).toUpperCase().includes(nextProps.searchTerm.toUpperCase())
+        );
+        console.log(localRecipes);
+        this.setState({exclusionIds: localRecipes.map((r) => r.id), localRecipes});
     }
 
     render() {
         return (
             <div className="home-screen">
-                <RecipeList recipes={this.state.recipes} changePage={this.props.changePage} title={"All Recipes"}/>
+                <RecipeList
+                    recipes={this.state.localRecipes || this.state.recipes}
+                    changePage={this.props.changePage}
+                    title={"All Recipes"}
+                />
             </div>
         );
     }
 }
+
 export {HomeScreen};
