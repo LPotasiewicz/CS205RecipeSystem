@@ -29,9 +29,8 @@ class HomeScreen extends Component {
 
     componentWillReceiveProps(nextProps) {
         const localRecipes = (this.state.recipes || []).filter((r) =>
-            JSON.stringify(r).toUpperCase().includes(nextProps.searchTerm.toUpperCase())
+            JSON.stringify(r).toUpperCase().includes((nextProps.searchTerm || "").toUpperCase())
         );
-        console.log(localRecipes);
         this.setState({exclusionIds: localRecipes.map((r) => r.id), localRecipes});
     }
 

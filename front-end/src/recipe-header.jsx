@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {pages, partial} from "./App";
+import {appState, pages, partial} from "./App";
+import {deleteRecipe} from "./actions";
 
 class RecipeHeader extends Component {
     static propTypes = {
@@ -27,6 +28,16 @@ class RecipeHeader extends Component {
                 <h4>{recipeHeader.author || "--"}</h4><br/>
                 <p className={"header-label"}>{"Cook Time:"}</p>
                 <p>{recipeHeader.cook_time || "--"}</p>
+                {
+                    appState.name === recipeHeader.author
+                        ? <button
+                            onClick={partial(
+                                deleteRecipe, recipeHeader.id
+                            )}
+                            className={"delete-button"}
+                        >X</button>
+                        : null
+                }
             </button>
         );
     }

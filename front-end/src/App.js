@@ -29,6 +29,13 @@ export function partial(fn /*, args...*/) {
     };
 }
 
+export const appState = {
+    email:"",
+    id:"",
+    name:"",
+    password:""
+};
+
 class App extends Component {
 
     constructor(props){
@@ -51,7 +58,7 @@ class App extends Component {
             case(pages.addARecipe):
                 return(<AddARecipe/>);
             case(pages.login):
-                return(<Login/>);
+                return(<Login changePage={this.changePage}/>);
             case(pages.signUp):
                 return(<SignUp/>);
             default:

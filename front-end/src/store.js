@@ -13,7 +13,6 @@ class Store extends React.Component {
 
     add(id, data) {
         this._data[id] = data;
-        console.log(this._data);
         this.yell(id);
     }
 
