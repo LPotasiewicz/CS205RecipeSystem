@@ -128,7 +128,19 @@ class AddARecipe extends Component {
                             });
                     }
                 }/>
-                {/*{this.state.img_url ? <iframe src={"imageRip.php/?url=" + this.state.img_url}></iframe> : null}*/}
+                Or Upload:
+                <input type="file" accept={"image/*"} onChange={
+                    partial((localThis, e) => {
+                        const files = Array.from(e.target.files);
+                        const reader = new FileReader();
+                        reader.onloadend = function (e) {
+                            const localPayload = localThis.state.payload;
+                            localPayload.img_url = e.target.result;
+                            localThis.setState({payload: localPayload});
+                        };
+                        reader.readAsDataURL(files[0])
+                    }, this)
+                }/>
                 <br/>
                 <img src={this.state.payload.img_url} alt={"recipe visual"}/>
                 <br/>
