@@ -17,3 +17,12 @@
 .app {
     text-align: center;
 }
+
+.add-a-recipe input {
+    margin: 10px;
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    background-color: floralwhite;
+}

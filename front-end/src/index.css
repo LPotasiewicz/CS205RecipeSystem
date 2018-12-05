@@ -6,6 +6,7 @@ body {
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
 }
 
 .top-bar {
@@ -60,6 +61,7 @@ body {
 
 /* RECIPE BLOCK */
 .recipe-header {
+    border: none;
     vertical-align: top;
     overflow: hidden;
     width: 360px;
@@ -69,6 +71,10 @@ body {
     display: inline-block;
     border-radius: 25px;
     box-shadow: 0 0 10px #522;
+    transition: box-shadow 0.2s ease;
+}
+.recipe-header:hover {
+    box-shadow: 0 0 20px #400;
 }
 .recipe-header h2 {
     color: darkcyan;

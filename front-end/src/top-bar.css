@@ -1,11 +1,10 @@
 .top-bar {
     display: inline-block;
     background-color: #933;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
-.top-bar {
-     display: inline-block;
-     background-color: #933;
- }
 .top-bar h2 {
     display: inline-block;
     margin: 8px;
@@ -38,6 +37,9 @@
     display: inline-block;
     background-color: #933;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 47px;
+    left: 0;
 }
 .nav button{
     color: white;
@@ -51,4 +53,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.2s ease;
+}
+/*this exists to push content down past the nav, as it is positioned fixed*/
+.app {
+    padding-top: 94px;
 }
