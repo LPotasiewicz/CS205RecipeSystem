@@ -109,13 +109,13 @@ class AddARecipe extends Component {
         }
         return (
             <div className="add-a-recipe">
-                Name:
+                <p>Name</p>
                 {this._createInput("title")}
                 <br/>
-                Time to Cook:
+                <p>Time to Cook</p>
                 {this._createInput("cook_time")}
                 <br/>
-                Image URL:
+                <p>Image URL</p>
                 <input type="text" value={this.state.img_url} onChange={
                     (event) => {
                         this.setState({img_url: event.target.value});
@@ -128,7 +128,7 @@ class AddARecipe extends Component {
                             });
                     }
                 }/>
-                Or Upload:
+                <p>Or Upload</p>
                 <input type="file" accept={"image/*"} onChange={
                     partial((localThis, e) => {
                         const files = Array.from(e.target.files);
@@ -145,11 +145,11 @@ class AddARecipe extends Component {
                 <img src={this.state.payload.img_url} alt={"recipe visual"}/>
                 <br/>
                 <section>
-                    Ingredients:
+                    <p>Ingredients</p>
                     <br/>
                     {this._createInputList("ingredients")}
                     <br/>
-                    Steps:
+                    <p>Steps</p>
                     <br/>
                     {this._createInputList("steps")}
                 </section>

@@ -1,6 +1,5 @@
 .add-a-recipe {
     display: inline-block;
-    text-align: left;
     width: 54rem;
     box-shadow: rgba(0, 0, 0, 0.3) 0 0 1rem;
     padding: 2rem;
@@ -19,10 +18,27 @@
 }
 
 .add-a-recipe input {
-    margin: 10px;
+    margin: 0px;
     padding: 10px;
+    text-align: center;
     width: 50%;
     border-radius: 5px;
     font-family: Tahoma, Verdana, Segoe, sans-serif;
     background-color: floralwhite;
+}
+
+.add-a-recipe input[type=file] {
+    width: auto;
+}
+
+.add-a-recipe button {
+    border: none;
+    background-color: #933;
+    color: floralwhite;
+    margin: 50px 0 0 0;
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
