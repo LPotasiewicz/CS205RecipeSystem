@@ -29,6 +29,7 @@ class RecipeHeader extends Component {
                 <p className={"header-label"}>{"Cook Time:"}</p>
                 <p>{recipeHeader.cook_time || "--"}</p>
                 {
+                    // only show the delete button when the other of the post is logged in
                     appState.name === recipeHeader.author
                         ? <button
                             onClick={partial(

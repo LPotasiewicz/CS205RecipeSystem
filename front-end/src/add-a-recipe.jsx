@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {partial} from "./App";
+import {appState, partial} from "./App";
 import {postRecipe} from "./actions";
 
 class AddARecipe extends Component {
@@ -15,7 +15,7 @@ class AddARecipe extends Component {
                 img_url: "",
                 ingredients: [""],
                 steps: [""],
-                userId: "0"
+                userId: appState.id || "0"
             }
         };
         this._submit = this._submit.bind(this);
