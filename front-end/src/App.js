@@ -86,7 +86,7 @@ class App extends Component {
             : [pages.home, pages.addARecipe];
         return (
             <div className="app">
-                <TopBar updateSearch={this.updateSearch}/>
+                <TopBar updateSearch={this.updateSearch} page={this.state.page}/>
                 <Nav
                     navOptions={navOptions}
                     changePage={this.changePage}

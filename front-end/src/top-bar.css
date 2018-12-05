@@ -1,9 +1,7 @@
 .top-bar {
     display: inline-block;
     background-color: #933;
-    position: fixed;
-    top: 0;
-    left: 0;
+    height: 0;
 }
 .top-bar h2 {
     display: inline-block;
@@ -12,13 +10,30 @@
     font-size: 27px;
 }
 .top-bar input {
-    height: 22px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    height: 30px;
     border: none;
     margin: 10px;
     vertical-align: top;
-    border-bottom: solid white 3px;
-    background: transparent;
-    color: white;
+    border-bottom: solid floralwhite 3px;
+    background: rgba(0,0,0,0.3);
+    color: floralwhite;
+    padding: 5px 10px;
+    font-size: 26px;
+}
+.top-bar input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: floralwhite;
+    opacity: 1; /* Firefox */
+}
+
+.top-bar input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: floralwhite;
+}
+
+.top-bar input::-ms-input-placeholder { /* Microsoft Edge */
+    color: floralwhite;
 }
 .top-bar button {
     color: white;
@@ -38,7 +53,7 @@
     background-color: #933;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     position: fixed;
-    top: 47px;
+    top: 0;
     left: 0;
 }
 .nav button{
@@ -56,5 +71,12 @@
 }
 /*this exists to push content down past the nav, as it is positioned fixed*/
 .app {
-    padding-top: 94px;
+    padding-top: 27px;
+    height: calc(100vh - 27px);
+}
+.banner {
+    background: url("homeBanner.jpg") no-repeat center;
+    background-size: cover;
+    height: 200px;
+    border-bottom: #933 solid 5px;
 }

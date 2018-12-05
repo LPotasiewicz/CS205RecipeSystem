@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
 import PropTypes from "prop-types";
+import {pages} from "./App";
 
 class TopBar extends Component {
     static propTypes = {
-        updateSearch: PropTypes.func
+        updateSearch: PropTypes.func,
+        page: PropTypes.string
     };
 
     constructor(props) {
@@ -19,20 +21,25 @@ class TopBar extends Component {
     }
 
     render() {
+        if (this.props.page === pages.home) {
+            return (
+                <div className="top-bar">
+                    <input
+                        type="text"
+                        placeholder="Filter..."
+                        onChange={this.handleSearchChange}
+                        value={this.state.searchTerm}
+                    />
+                    {/*<button><img*/}
+                        {/*src={"http://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/500px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"}*/}
+                        {/*alt={"Search Icon"}*/}
+                    {/*/>*/}
+                    {/*</button>*/}
+                </div>
+            );
+        }
         return (
             <div className="top-bar">
-                <h2>{"Millennial Recipe System"}</h2>
-                <input
-                    type="text"
-                    placeholder="Search..."
-                    onChange={this.handleSearchChange}
-                    value={this.state.searchTerm}
-                />
-                <button><img
-                    src={"http://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/VisualEditor_-_Icon_-_Search-big_-_white.svg/500px-VisualEditor_-_Icon_-_Search-big_-_white.svg.png"}
-                    alt={"Search Icon"}
-                    />
-                </button>
             </div>
         );
     }

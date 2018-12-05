@@ -142,7 +142,11 @@ class AddARecipe extends Component {
                     }, this)
                 }/>
                 <br/>
-                <img src={this.state.payload.img_url} alt={"recipe visual"}/>
+                {
+                    this.state.payload.img_url
+                        ? <img src={this.state.payload.img_url} alt={"recipe visual"}/>
+                        : null
+                }
                 <br/>
                 <section>
                     <p>Ingredients</p>

@@ -15,6 +15,7 @@ class Nav extends Component {
     render() {
         return (
             <div className="nav">
+                <h2>{"Millennial Recipe System"}</h2>
                 {this.props.navOptions.map((option) => (
                     <button key={option} onClick={partial(this.props.changePage, option)}>{option}</button>
                 ))}
