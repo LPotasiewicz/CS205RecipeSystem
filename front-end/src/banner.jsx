@@ -5,7 +5,6 @@ class Banner extends Component {
     render() {
         return (
             <div className="banner">
-                <img src={require("./homeBanner.jpg")} alt={"Banner"} />
             </div>
         );
     }
