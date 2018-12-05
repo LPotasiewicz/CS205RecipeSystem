@@ -47,7 +47,9 @@ class SignUp extends Component {
     render() {
         return (
             <div className="sign-up">
-                <h2>Sign Up</h2>
+                <div className={"login-banner"}>
+                    <h2>Sign Up</h2>
+                </div>
                 <label>
                     {this.creteInput("text", "name", "Name")}
                 </label>

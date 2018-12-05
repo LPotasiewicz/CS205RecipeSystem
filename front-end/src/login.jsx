@@ -37,7 +37,9 @@ class Login extends Component {
     render() {
         return (
             <div className="login">
-                <h2>Login</h2>
+                <div className={"login-banner"}>
+                    <h2>Log In</h2>
+                </div>
                 <label>
                     <input
                         type="email"
