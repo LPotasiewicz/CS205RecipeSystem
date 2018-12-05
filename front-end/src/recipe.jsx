@@ -37,13 +37,17 @@ class Recipe extends Component {
                         <h4>{"Cook Time:"}</h4>
                         <p className={"cook-time"}>{recipe.cook_time || "--"}</p>
                         <h4 className={"ingredients"}>{"Ingredients:"}</h4>
-                        {(recipe.ingredients || []).map((ins, i) =>
-                            <p className={"ingredient"} key={ins + i}>{ins}</p>
-                        )}
-                        <h4 className={"instructions"}>{"Instructions:"}</h4>
-                        {(recipe.steps || []).map((ing, i) =>
-                            <p className={"step"} key={ing + i}>{ing}</p>
-                        )}
+                        <ol>
+                            {(recipe.ingredients || []).map((ins, i) =>
+                                <li className={"ingredient"} key={ins + i}>{ins}</li>
+                            )}
+                        </ol>
+                        <ul>
+                            <h4 className={"instructions"}>{"Instructions:"}</h4>
+                            {(recipe.steps || []).map((ing, i) =>
+                                <li className={"step"} key={ing + i}>{ing}</li>
+                            )}
+                        </ul>
                     </div>
                     <div className={"img-container"}>
                         <img
