@@ -25,7 +25,8 @@ class Login extends Component {
         appState.password = data.password;
         if (data.password === hash(this.state.password))
             this.props.changePage(pages.home);
-        else alert("incorrect login");
+        else
+            this.setState({loginFail: true})
     }
 
     login() {
@@ -60,6 +61,9 @@ class Login extends Component {
                            }/>
                 </label>
                 <br/>
+                {
+                    this.state.loginFail ? <pre>{"X Incorrect Email or Password"}</pre> : null
+                }
                 <button className="submit" onClick={this.login}>Login</button>
             </div>
         );
