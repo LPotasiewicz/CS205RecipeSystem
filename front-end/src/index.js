@@ -6,6 +6,7 @@ import './recipe.css';
 import './top-bar.css';
 import './login.css';
 import './sign-up.css';
+import './banner.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

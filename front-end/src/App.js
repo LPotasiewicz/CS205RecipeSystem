@@ -7,6 +7,7 @@ import {TopBar} from "./top-bar";
 import {AddARecipe} from "./add-a-recipe";
 import {Login} from "./login";
 import {SignUp} from "./sign-up";
+import {Banner} from "./banner"
 
 export const pages = {
     home: "Home",
@@ -91,6 +92,7 @@ class App extends Component {
                     changePage={this.changePage}
                     name={appState.name}
                     logOut={this.logOut}/>
+                <Banner/>
                 {this._getPage()}
             </div>
         );
