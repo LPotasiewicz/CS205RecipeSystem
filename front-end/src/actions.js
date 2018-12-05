@@ -58,6 +58,13 @@ export function postRecipe(data) {
     xhr.send(JSON.stringify(data));
 }
 
+export function postUser(data) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://3.17.29.161/users", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(data));
+}
+
 export function deleteRecipe(id) {
     const xhr = new XMLHttpRequest();
     xhr.open("DELETE", "http://3.17.29.161/recipes/delete/" + id, true);

@@ -4,6 +4,7 @@ import {store} from "./store";
 import {getUserByEmail} from "./actions";
 import PropTypes from "prop-types";
 import {appState, pages} from "./App";
+import {hash} from "./sign-up";
 
 class Login extends Component {
     static propTypes = {
@@ -19,7 +20,12 @@ class Login extends Component {
 
     dataListenerUser(data) {
         appState.name = data.name;
-        this.props.changePage(pages.home)
+        appState.email = data.email;
+        appState.id = data.id;
+        appState.password = data.password;
+        if (data.password === hash(this.state.password))
+            this.props.changePage(pages.home);
+        else alert("incorrect login");
     }
 
     login() {

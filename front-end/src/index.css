@@ -18,6 +18,26 @@ body {
     width: 100%;
     text-align: center;
 }
+.nav button {
+}
+.nav p {
+    color: white;
+    font-size: 21px;
+    border: none;
+    padding: 10px;
+    background: transparent;
+    vertical-align: top;
+    font-weight: bold;
+    margin: 0;
+    display: inline-block;
+    float: right;
+}
+.nav button:nth-child(3) {
+    float: right;
+}
+.nav button:nth-child(4) {
+    float: right;
+}
   /* TOP BAR */
 .nav .top-bar button{
     font-size: 14pt;

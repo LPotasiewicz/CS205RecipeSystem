@@ -43,10 +43,19 @@ class App extends Component {
         this.state = {page: pages.home};
         this.changePage = this.changePage.bind(this);
         this.updateSearch = this.updateSearch.bind(this);
+        this.logOut = this.logOut.bind(this);
     }
 
     updateSearch (searchTerm) {
         this.setState({searchTerm});
+    }
+
+    logOut() {
+        appState.name = "";
+        appState.email = "";
+        appState.id = "";
+        appState.password = "";
+        this.setState({});
     }
 
     _getPage() {
@@ -60,7 +69,7 @@ class App extends Component {
             case(pages.login):
                 return(<Login changePage={this.changePage}/>);
             case(pages.signUp):
-                return(<SignUp/>);
+                return(<SignUp changePage={this.changePage}/>);
             default:
                 return (<h1>{"How did you get here"}</h1>)
         }
@@ -71,10 +80,16 @@ class App extends Component {
     }
 
     render() {
+        const navOptions = !appState.email ? [pages.home, pages.addARecipe, pages.login, pages.signUp]
+            : [pages.home, pages.addARecipe];
         return (
             <div className="app">
                 <TopBar updateSearch={this.updateSearch}/>
-                <Nav navOptions={[pages.home, pages.addARecipe, pages.login, pages.signUp]} changePage={this.changePage}/>
+                <Nav
+                    navOptions={navOptions}
+                    changePage={this.changePage}
+                    name={appState.name}
+                    logOut={this.logOut}/>
                 {this._getPage()}
             </div>
         );
