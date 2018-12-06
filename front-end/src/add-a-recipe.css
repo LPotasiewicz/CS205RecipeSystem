@@ -8,10 +8,13 @@
     font-size: 15pt;
 }
 .add-a-recipe img {
-    max-width: 300px;
-    border: 5px solid #933;
+    margin: 20px 0 0 0;
+    padding: 0;
+    max-width: 400px;
+    border: 2px solid #933;
     display: inline-block;
     text-align: left;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
 .app {
     text-align: center;
@@ -31,7 +34,22 @@
     width: auto;
 }
 
+.add-a-recipe p {
+    margin: 20px 0 5px 0;
+    padding: 0;
+}
+
 .add-a-recipe button {
+    border: none;
+    background-color: #933;
+    color: floralwhite;
+    border-radius: 10px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+
+.goButton {
     border: none;
     background-color: #933;
     color: floralwhite;
@@ -40,5 +58,5 @@
     width: 50%;
     border-radius: 5px;
     font-family: Tahoma, Verdana, Segoe, sans-serif;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
