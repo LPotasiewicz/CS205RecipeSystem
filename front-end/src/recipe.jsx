@@ -33,7 +33,7 @@ class Recipe extends Component {
                 <section className={"recipe-info"}>
                     <div className={"recipe-title-area"}>
                         <h2>{recipe.title || "--"}</h2>
-                        <p className={"author"}>{recipe.author || "--"}</p>
+                        <p className={"author"}>{"Added by: "}{ recipe.author || "--"}</p>
                         <h4>{"Cook Time:"}</h4>
                         <p className={"cook-time"}>{recipe.cook_time || "--"}</p>
                         <h4 className={"ingredients"}>{"Ingredients:"}</h4>

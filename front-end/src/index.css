@@ -156,37 +156,3 @@ body {
     font-size: 26px;
     margin-top: -34px;
 }
-
-/* RECIPE-INFO */
-
-.recipe-info h2 {
-    margin-left: 2em;
-}
-
-.recipe-info img {
-    max-width: 15%;
-    margin-left: 2em;
-    border-style: double;
-}
-
-.author {
-    margin-left: 2em;
-}
-
-.description {
-    margin-left: 2em;
-}
-
-.ingredients {
-    margin-left: 2em;
-}
-
-.instructions {
-    margin-left: 2em;
-}
-
-/* RELATED-RECIPES */
-
-.related-recipes > h4{
-    margin-left: 1em;
-}

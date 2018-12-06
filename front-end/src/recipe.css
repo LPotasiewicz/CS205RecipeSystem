@@ -3,31 +3,72 @@
     color: #933;
 }
 
-.recipe p{
-    margin-left: 0.5em;
+.cook-time {
+    margin-left: 40px;
+    padding: 10px;
+    background-color: #933;
+    color: white;
+    text-align: center;
+    font-size: 20pt;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #933;
+
+}
+
+.ingredient {
+    padding: 10px;
+    background-color: #933;
+    color: white;
+    text-align: center;
+    font-size: 20pt;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #933;
+
+}
+
+.step {
+    padding: 10px;
+    background-color: #933;
+    color: white;
+    text-align: center;
+    font-size: 20pt;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #933;
+}
+.author {
+    font-size: 20pt;
+    margin-left: 3em;
+    font-style: italic;
+
+
 }
 .recipe h2 {
-    font-size: 20pt;
+    font-size: 40pt;
     font-weight: bold;
+    margin-left: 3em;
 }
 
 .recipe-info h4 {
-    font-size: 16pt;
-    margin-left: 1em;
+    font-size: 20pt;
+    margin-left: 2em;
 }
 .recipe-info img {
-    max-width: 40%;
-    width: 100%;
-    margin: 5em 1em 1em;
-    border: solid;
-
+    max-width: 75%;
+    border: none;
+    margin: 100px auto auto;
+    display: block;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #522;
 }
 
+.related-recipes h4 {
+    font-size: 20pt;
+    margin-left: 3em;
+}
 .recipe .img-container {
+    text-align: center;
     display: inline-block;
     width: 50%;
-    height: 30rem;
-    overflow: hidden;
 }
 
 .recipe-title-area {
