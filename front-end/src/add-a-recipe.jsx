@@ -117,20 +117,21 @@ class AddARecipe extends Component {
                 <p>Time to Cook</p>
                 {this._createInput("cook_time")}
                 <br/>
-                <p>Image URL</p>
-                <input type="text" value={this.state.img_url} onChange={
-                    (event) => {
-                        this.setState({img_url: event.target.value});
-                        this.toDataURL(
-                            event.target.value,
-                            (dataUrl) => {
-                                const localPayload = this.state.payload;
-                                localPayload.img_url = dataUrl;
-                                this.setState({payload: localPayload});
-                            });
-                    }
-                }/>
-                <p>Or Upload</p>
+                {/*This is no longer being used but is kept for refrence*/}
+                {/*<p>Image URL</p>*/}
+                {/*<input type="text" value={this.state.img_url} onChange={*/}
+                {/*(event) => {*/}
+                {/*this.setState({img_url: event.target.value});*/}
+                {/*this.toDataURL(*/}
+                {/*event.target.value,*/}
+                {/*(dataUrl) => {*/}
+                {/*const localPayload = this.state.payload;*/}
+                {/*localPayload.img_url = dataUrl;*/}
+                {/*this.setState({payload: localPayload});*/}
+                {/*});*/}
+                {/*}*/}
+                {/*}/>*/}
+                <p>Upload Image</p>
                 <input type="file" accept={"image/*"} onChange={
                     partial((localThis, e) => {
                         const files = Array.from(e.target.files);
@@ -146,15 +147,14 @@ class AddARecipe extends Component {
                 <br/>
                 {
                     this.state.payload.img_url
-                        ? <img src={this.state.payload.img_url} alt={"recipe visual"}/>
+                        ? [<img src={this.state.payload.img_url} alt={"recipe visual"}/>,
+                            <br/>]
                         : null
                 }
-                <br/>
                 <section>
                     <p>Ingredients</p>
                     <br/>
                     {this._createInputList("ingredients")}
-                    <br/>
                     <p>Steps</p>
                     <br/>
                     {this._createInputList("steps")}
