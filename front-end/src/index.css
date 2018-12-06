@@ -22,9 +22,10 @@ body {
     z-index: 11;
 }
 .nav button {
+    color: floralwhite;
 }
 .nav p {
-    color: white;
+    color: floralwhite;
     font-size: 21px;
     border: none;
     padding: 10px;
@@ -41,6 +42,9 @@ body {
 .nav button:nth-child(4) {
     float: right;
 }
+.nav-elements {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
   /* TOP BAR */
 .nav .top-bar button{
     font-size: 14pt;
@@ -48,7 +52,6 @@ body {
 }
 .top-bar img {
     max-height: 30px;
-
 }
 /* RECIPE LIST */
 .recipe-list{
@@ -61,7 +64,7 @@ body {
     text-align: left;
     position: absolute;
     color: floralwhite;
-    top: 126px;
+    top: 160px;
     font-size: 51px;
     left: 31px;
     text-shadow: black 0 0 10px;

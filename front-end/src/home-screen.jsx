@@ -4,6 +4,7 @@ import './App.css';
 import {RecipeList} from "./recipe-list";
 import {store} from "./store";
 import {getRecipes} from "./actions";
+import {Spinner} from "./spinner";
 
 class HomeScreen extends Component {
     static propTypes = {
@@ -37,11 +38,14 @@ class HomeScreen extends Component {
     render() {
         return (
             <div className="home-screen">
-                <RecipeList
-                    recipes={this.state.localRecipes || this.state.recipes}
-                    changePage={this.props.changePage}
-                    title={"All Recipes"}
-                />
+                {
+                    this.state.recipes ? <RecipeList
+                        recipes={this.state.localRecipes || this.state.recipes}
+                        changePage={this.props.changePage}
+                        title={"All Recipes"}
+                    /> : <Spinner/>
+                }
+
             </div>
         );
     }

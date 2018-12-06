@@ -19,12 +19,13 @@ class Login extends Component {
     }
 
     dataListenerUser(data) {
-        appState.name = data.name;
-        appState.email = data.email;
-        appState.id = data.id;
-        appState.password = data.password;
-        if (data.password === hash(this.state.password))
+        if (data.password === hash(this.state.password)) {
             this.props.changePage(pages.home);
+            appState.name = data.name;
+            appState.email = data.email;
+            appState.id = data.id;
+            appState.password = data.password;
+        }
         else
             this.setState({loginFail: true})
     }
