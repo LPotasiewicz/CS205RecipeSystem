@@ -1,3 +1,14 @@
+/* CSS for Top Bar */
+/* Author: Luke Potasiewicz */
+
+.nav .top-bar button{
+    font-size: 14pt;
+    color: darkcyan;
+}
+.top-bar img {
+    max-height: 30px;
+}
+
 .top-bar {
     display: inline-block;
     background-color: #933;

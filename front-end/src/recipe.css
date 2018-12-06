@@ -1,8 +1,13 @@
+/* CSS for Recipe Page */
+/* Author(s): Luke Potasiewicz, Sydney Bertrand */
+
+
 .recipe {
     text-align: left;
     color: #933;
 }
 
+/* Cook Time Value */
 .cook-time {
     margin-left: 40px;
     padding: 10px;
@@ -15,6 +20,7 @@
 
 }
 
+/* Ingredient Values */
 .ingredient {
     padding: 10px;
     background-color: #933;
@@ -26,6 +32,7 @@
 
 }
 
+/* Instruction Values */
 .step {
     padding: 10px;
     background-color: #933;
@@ -35,6 +42,8 @@
     border-radius: 25px;
     box-shadow: 0 0 10px #933;
 }
+
+/* Author Value */
 .author {
     font-size: 20pt;
     margin-left: 3em;
@@ -42,6 +51,7 @@
 
 
 }
+
 .recipe h2 {
     font-size: 40pt;
     font-weight: bold;
@@ -52,6 +62,8 @@
     font-size: 20pt;
     margin-left: 2em;
 }
+
+/* Recipe Image */
 .recipe-info img {
     max-width: 75%;
     border: none;
@@ -65,6 +77,7 @@
     font-size: 20pt;
     margin-left: 3em;
 }
+
 .recipe .img-container {
     text-align: center;
     display: inline-block;
