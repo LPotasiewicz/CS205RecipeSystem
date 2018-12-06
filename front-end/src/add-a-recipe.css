@@ -1,5 +1,6 @@
 .add-a-recipe {
     display: inline-block;
+    margin: 50px;
     width: 54rem;
     box-shadow: rgba(0, 0, 0, 0.3) 0 0 1rem;
     padding: 2rem;
