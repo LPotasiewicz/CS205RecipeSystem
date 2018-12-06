@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './App.css';
 import PropTypes from "prop-types";
 import {postUser} from "./actions";
 import {pages} from "./App";

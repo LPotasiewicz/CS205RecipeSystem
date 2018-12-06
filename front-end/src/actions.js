@@ -5,8 +5,12 @@ export function getRecipes() {
     const url = "http://3.17.29.161/recipes";
     Http.open("GET", url);
     Http.send();
+    // store yell updates components listening to the store with their relevant data
+    // this is a simple implementation of caching
     store.yell("recipes");
-    Http.onreadystatechange = (e) => {
+    // this function is called every time the Http request is updated
+    Http.onreadystatechange = () => {
+        // only add to the store if the
         if (Http.readyState === 4 && Http.status === 200) {
             try {
                 store.add("recipes", Http.responseText ? JSON.parse(Http.responseText) : []);

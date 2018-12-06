@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './App.css';
 import {appState, partial} from "./App";
 import {postRecipe} from "./actions";
 
