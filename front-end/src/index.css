@@ -36,6 +36,19 @@ body {
     display: inline-block;
     float: right;
 }
+@media only screen and (min-width: 600px) {
+    .nav button:nth-child(1) {
+        position: absolute;
+        left: 50%;
+        margin-left: -109px;
+    }
+
+    .nav button:nth-child(2) {
+        position: absolute;
+        left: 50%;
+        margin-left: -35px;
+    }
+}
 .nav button:nth-child(3) {
     float: right;
 }
