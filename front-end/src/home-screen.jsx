@@ -39,13 +39,13 @@ class HomeScreen extends Component {
         return (
             <div className="home-screen">
                 {
-                    this.state.recipes ? <RecipeList
-                        recipes={this.state.localRecipes || this.state.recipes}
-                        changePage={this.props.changePage}
-                        title={"All Recipes"}
-                    /> : <Spinner/>
+                    this.state.recipes ? null : <Spinner/>
                 }
-
+                <RecipeList
+                    recipes={this.state.localRecipes || this.state.recipes}
+                    changePage={this.props.changePage}
+                    title={"All Recipes"}
+                />
             </div>
         );
     }
