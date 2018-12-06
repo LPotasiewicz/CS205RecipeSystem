@@ -9,7 +9,6 @@ class Nav extends Component {
         changePage: PropTypes.func,
         logOut: PropTypes.func,
         name: PropTypes.string
-
     };
 
     render() {

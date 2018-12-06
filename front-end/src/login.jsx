@@ -20,11 +20,11 @@ class Login extends Component {
 
     dataListenerUser(data) {
         if (data.password === hash(this.state.password)) {
-            this.props.changePage(pages.home);
             appState.name = data.name;
             appState.email = data.email;
             appState.id = data.id;
             appState.password = data.password;
+            this.props.changePage(pages.home);
         }
         else
             this.setState({loginFail: true})

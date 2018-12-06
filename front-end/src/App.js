@@ -81,7 +81,6 @@ class App extends Component {
     }
 
     render() {
-        console.log(appState);
         const navOptions = !appState.email ? [pages.home, pages.addARecipe, pages.login, pages.signUp]
             : [pages.home, pages.addARecipe];
         return (
