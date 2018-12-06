@@ -1,3 +1,6 @@
+// **************************
+// Owned by: Luke Potasiewicz
+// **************************
 import React, {Component} from 'react';
 import {appState, partial} from "./App";
 import {postRecipe} from "./actions";

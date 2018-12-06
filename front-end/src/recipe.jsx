@@ -1,3 +1,7 @@
+// **************************
+// Owned by: Luke Potasiewicz
+// Bug fix: Sidney Bertrand
+// **************************
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {getRecipeUser} from "./actions";

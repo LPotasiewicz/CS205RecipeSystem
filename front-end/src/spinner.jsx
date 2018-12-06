@@ -1,3 +1,6 @@
+// **************************
+// Owned by: Luke Potasiewicz
+// **************************
 import React, {Component} from 'react';
 
 class Spinner extends Component {

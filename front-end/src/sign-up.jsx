@@ -1,3 +1,6 @@
+// **************************
+// Owned by: Devon Havers, Luke Potasiewicz
+// **************************
 import React, {Component} from 'react';
 import PropTypes from "prop-types";
 import {postUser} from "./actions";

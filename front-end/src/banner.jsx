@@ -1,5 +1,5 @@
 // ***********************************
-// Devon Havers
+// Owned by: Devon Havers
 // ***********************************
 import React, {Component} from 'react';
 

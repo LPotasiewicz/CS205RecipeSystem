@@ -1,3 +1,6 @@
+// **************************
+// Owned by: Devon Havers, Luke Potasiewicz
+// **************************
 import React, {Component} from 'react';
 import {store} from "./store";
 import {getUserByEmail} from "./actions";
