@@ -1,7 +1,8 @@
 .add-a-recipe {
     display: inline-block;
     margin: 50px;
-    width: 54rem;
+    max-width: 54rem;
+    width: calc(100% - 100px);
     box-shadow: rgba(0, 0, 0, 0.3) 0 0 1rem;
     padding: 2rem;
     box-sizing: border-box;
@@ -25,10 +26,17 @@
     margin: 0px;
     padding: 10px;
     text-align: center;
-    width: 50%;
+    width: 80%;
+    max-width: 300px;
     border-radius: 5px;
     font-family: Tahoma, Verdana, Segoe, sans-serif;
     background-color: floralwhite;
+}
+@media only screen and (max-width: 600px) {
+    .add-a-recipe {
+        margin: 0;
+        width: 100%;
+    }
 }
 
 .add-a-recipe input[type=file] {
