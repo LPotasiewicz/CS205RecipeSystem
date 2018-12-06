@@ -92,7 +92,7 @@ class App extends Component {
                     changePage={this.changePage}
                     name={appState.name}
                     logOut={this.logOut}/>
-                <Banner/>
+                {this.state.page === pages.home ? <Banner/> : null}
                 {this._getPage()}
             </div>
         );
