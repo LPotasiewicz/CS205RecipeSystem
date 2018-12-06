@@ -1,17 +1,20 @@
+#Written by Devon Havers and Saraf Ray
 from flask import Flask, jsonify, request
 from flask_pymongo import PyMongo
 from flask_cors import CORS
 
 app = Flask(__name__)
-
+#connect to mongoDB cloud database
 app.config["MONGO_URI"] = "mongodb://devon:1234@test-shard-00-00-i0x5r.mongodb.net:27017,test-shard-00-01-i0x5r.mongodb.net:27017,test-shard-00-02-i0x5r.mongodb.net:27017/test?ssl=true&replicaSet=Test-shard-0&authSource=admin&retryWrites=true"
 #app.config["MONGO_URI"] = "mongodb://localhost:27017/test2"
 mongo = PyMongo(app)
 CORS(app)
 
+#set to zero so increments will start at zero
 userId = 0
 recipeId = 0
 
+#not used
 @app.route("/")
 def index():
     return "Hello World!"
@@ -143,4 +146,5 @@ def delete_recipe(recipe_id):
     
 if __name__ == '__main__':
     #app.run()
+    #host and port specified 
     app.run(host="0.0.0.0", port=80)

@@ -1,5 +1,7 @@
+// **************************
+// Owned by: Luke Potasiewicz
+// **************************
 import React, {Component} from 'react';
-import './App.css';
 import {Recipe} from "./recipe";
 import {HomeScreen} from "./home-screen";
 import {Nav} from "./nav";

@@ -1,5 +1,7 @@
+// ***********************************
+// Owned by: Devon Havers
+// ***********************************
 import React, {Component} from 'react';
-import './App.css';
 
 class Banner extends Component {
     render() {

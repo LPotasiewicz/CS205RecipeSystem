@@ -1,6 +1,8 @@
+// **************************
+// Owned by: Luke Potasiewicz
+// **************************
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import './App.css';
 import {RecipeHeader} from "./recipe-header";
 
 class RecipeList extends Component {

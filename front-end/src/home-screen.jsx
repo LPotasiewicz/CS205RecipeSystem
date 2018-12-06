@@ -1,6 +1,8 @@
+// **************************
+// Owned by: Luke Potasiewicz
+// **************************
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import './App.css';
 import {RecipeList} from "./recipe-list";
 import {store} from "./store";
 import {getRecipes} from "./actions";

@@ -1,5 +1,7 @@
+// **************************
+// Owned by: Luke Potasiewicz
+// **************************
 import React, {Component} from 'react';
-import './App.css';
 import PropTypes from "prop-types";
 import {pages} from "./App";
 

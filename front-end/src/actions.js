@@ -1,3 +1,6 @@
+// **************************
+// Owned by: Luke Potasiewicz
+// **************************
 import {store} from "./store";
 
 export function getRecipes() {
@@ -5,15 +8,19 @@ export function getRecipes() {
     const url = "http://3.17.29.161/recipes";
     Http.open("GET", url);
     Http.send();
+    // store yell updates components listening to the store with their relevant data
+    // this is a simple implementation of caching
     store.yell("recipes");
-    Http.onreadystatechange = (e) => {
+    // this function is called every time the Http request is updated
+    Http.onreadystatechange = () => {
+        // only add to the store if the request done and successful
         if (Http.readyState === 4 && Http.status === 200) {
             try {
+                // add the data to the store, with the identifier
                 store.add("recipes", Http.responseText ? JSON.parse(Http.responseText) : []);
             } catch (e) {
                 console.log(e);
             }
-
         }
     };
 }
@@ -23,10 +30,15 @@ export function getRecipeUser(id) {
     const url = "http://3.17.29.161/recipes/users/" + id;
     Http.open("GET", url);
     Http.send();
+    // store yell updates components listening to the store with their relevant data
+    // this is a simple implementation of caching
     store.yell("recipeUser" + id);
+    // this function is called every time the Http request is updated
     Http.onreadystatechange = (e) => {
+        // only add to the store if the request done and successful
         if (Http.readyState === 4 && Http.status === 200) {
             try {
+                // add the data to the store, with the identifier
                 store.add("recipeUser" + id, Http.responseText ? JSON.parse(Http.responseText) : []);
             } catch (e) {
                 console.log(e);
@@ -40,9 +52,12 @@ export function getUserByEmail(id) {
     const url = "http://3.17.29.161/users/" + id;
     Http.open("GET", url);
     Http.send();
+    // this function is called every time the Http request is updated
     Http.onreadystatechange = (e) => {
+        // only add to the store if the request done and successful
         if (Http.readyState === 4 && Http.status === 200) {
             try {
+                // add the data to the store, with the identifier
                 store.add("user" + id, Http.responseText ? JSON.parse(Http.responseText) : []);
             } catch (e) {
                 console.log(e);

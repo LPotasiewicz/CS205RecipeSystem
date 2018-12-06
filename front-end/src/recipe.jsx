@@ -1,6 +1,9 @@
+// **************************
+// Owned by: Luke Potasiewicz
+// Bug fix: Sidney Bertrand
+// **************************
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import './App.css';
 import {getRecipeUser} from "./actions";
 import {store} from "./store";
 import {RecipeList} from "./recipe-list";
@@ -42,8 +45,8 @@ class Recipe extends Component {
                                 <li className={"ingredient"} key={ins + i}>{ins}</li>
                             )}
                         </ol>
+                        <h4 className={"instructions"}>{"Instructions:"}</h4>
                         <ul>
-                            <h4 className={"instructions"}>{"Instructions:"}</h4>
                             {(recipe.steps || []).map((ing, i) =>
                                 <li className={"step"} key={ing + i}>{ing}</li>
                             )}

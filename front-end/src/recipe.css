@@ -73,7 +73,7 @@
     box-shadow: 0 0 10px #522;
 }
 
-.related-recipes h4 {
+.related-recipes > h4 {
     font-size: 20pt;
     margin-left: 3em;
 }
