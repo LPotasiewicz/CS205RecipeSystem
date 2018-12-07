@@ -37,6 +37,12 @@ class Login extends Component {
         getUserByEmail(this.state.email);
     }
 
+    _handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            this.login();
+        }
+    };
+
     render() {
         return (
             <div className="login">
@@ -51,8 +57,9 @@ class Login extends Component {
                         value={this.state.email}
                         onChange={(event) => {
                             this.setState({email: event.target.value});
-                        }
-                        }/>
+                        }}
+                        onKeyPress={this._handleKeyPress}
+                    />
                 </label>
                 <br/>
                 <label>
@@ -62,8 +69,9 @@ class Login extends Component {
                            value={this.state.password}
                            onChange={(event) => {
                                this.setState({password: event.target.value});
-                           }
-                           }/>
+                           }}
+                           onKeyPress={this._handleKeyPress}
+                    />
                 </label>
                 <br/>
                 {

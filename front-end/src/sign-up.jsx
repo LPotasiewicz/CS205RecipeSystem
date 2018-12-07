@@ -42,9 +42,16 @@ class SignUp extends Component {
             value={this.state[value]}
             onChange={(event) => {
                 this.setState({[value]: event.target.value});
-            }
-            }/>
+            }}
+            onKeyPress={this._handleKeyPress}
+        />
     }
+
+    _handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            this.signUp();
+        }
+    };
 
     render() {
         return (
