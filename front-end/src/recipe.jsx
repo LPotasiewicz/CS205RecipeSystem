@@ -1,6 +1,6 @@
 // **************************
 // Owned by: Luke Potasiewicz
-// Bug fix: Sidney Bertrand
+// Bug fix: Sydney Bertrand
 // **************************
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';

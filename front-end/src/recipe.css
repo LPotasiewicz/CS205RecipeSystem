@@ -1,5 +1,5 @@
 /* CSS for Recipe Page */
-/* Author(s): Luke Potasiewicz, Sydney Bertrand */
+/* Author(s): Sydney Bertrand, Luke Potasiewicz*/
 
 
 .recipe {
@@ -29,7 +29,10 @@
     font-size: 20pt;
     border-radius: 25px;
     box-shadow: 0 0 10px #933;
+}
 
+.ingredient:last-of-type {
+    display: none;
 }
 
 /* Instruction Values */
@@ -41,6 +44,10 @@
     font-size: 20pt;
     border-radius: 25px;
     box-shadow: 0 0 10px #933;
+}
+
+.step:last-of-type {
+    display: none;
 }
 
 /* Author Value */
