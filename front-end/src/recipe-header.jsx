@@ -34,7 +34,7 @@ class RecipeHeader extends Component {
                 <p>{recipeHeader.cook_time || "--"}</p>
                 {
                     // only show the delete button when the other of the post is logged in
-                    appState.name === recipeHeader.author
+                    appState.name === recipeHeader.author || appState.name === "admin"
                         ? <button
                             onClick={() => {
                                 deleteRecipe(recipeHeader.id);
