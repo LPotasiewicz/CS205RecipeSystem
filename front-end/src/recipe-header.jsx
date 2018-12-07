@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {appState, pages, partial} from "./App";
-import {deleteRecipe} from "./actions";
+import {deleteRecipe, getRecipes} from "./actions";
 
 class RecipeHeader extends Component {
     static propTypes = {
@@ -15,15 +15,16 @@ class RecipeHeader extends Component {
     render() {
         const recipeHeader = this.props.recipeHeader || {};
         return (
-            <button className="recipe-header" onClick={partial(
-                this.props.changePage,
-                pages.recipe,
-                {recipe: recipeHeader}
-            )}>
+            <button className="recipe-header" >
                 <div className={"header-image-wrapper"}>
                     <img
                         src={recipeHeader.img_url || "https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/frying-pan-pizza-easy-recipe-collection.jpg"}
                         alt={"recipe"}
+                        onClick={partial(
+                            this.props.changePage,
+                            pages.recipe,
+                            {recipe: recipeHeader}
+                        )}
                     />
                 </div>
                 <h3>{recipeHeader.title || "--"}</h3>
@@ -35,9 +36,11 @@ class RecipeHeader extends Component {
                     // only show the delete button when the other of the post is logged in
                     appState.name === recipeHeader.author
                         ? <button
-                            onClick={partial(
-                                deleteRecipe, recipeHeader.id
-                            )}
+                            onClick={() => {
+                                deleteRecipe(recipeHeader.id);
+                                getRecipes();
+                            }
+                            }
                             className={"delete-button"}
                         >X</button>
                         : null
