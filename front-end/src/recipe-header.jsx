@@ -15,7 +15,7 @@ class RecipeHeader extends Component {
     render() {
         const recipeHeader = this.props.recipeHeader || {};
         return (
-            <button className="recipe-header" >
+            <div className="recipe-header" >
                 <div className={"header-image-wrapper"}>
                     <img
                         src={recipeHeader.img_url || "https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/frying-pan-pizza-easy-recipe-collection.jpg"}
@@ -47,7 +47,7 @@ class RecipeHeader extends Component {
                         >X</button>
                         : null
                 }
-            </button>
+            </div>
         );
     }
 }
